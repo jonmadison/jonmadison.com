@@ -1,20 +1,20 @@
-import React from 'react';
+import React from "react";
+import Gallery from "./Gallery";
+import Home from "./Home";
 
 let Main = React.createClass({
-  render: function() {
-    return (
-      <div className="container">
-        <div className="row">
-          <div className="span10 offset2">
-           <h1>
-            Software engineer, continuous learner,
-            and sharer currently working in Seattle, Washington.
-            </h1>
+    render: function() {
+        return (
+          <div className="container-fluid">
+            <div className="photos">
+              <Gallery/>
+            </div>
+            <div className="container">
+              {this.props.children}
+            </div>
           </div>
-        </div>
-      </div>
-    );
-  }
+        );
+    }
 });
 
 module.exports = Main;

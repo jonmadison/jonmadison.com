@@ -1,0 +1,33 @@
+div.photos {
+  height: 320px;
+  white-space: nowrap;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+div.home-container {
+  padding: 25px;
+}
+
+ul.photo-list {
+  list-style-type: none;
+}
+
+ul.photo-list li {
+  display: inline;
+}
+
+div.feature-box {
+  height: 600px;
+  border: 1px dotted #aeaeae;
+  background-color: #fefefef;
+}
+
+ul.photo-list > li {
+  opacity: 0.5;
+  transition: opacity 250ms;
+}
+
+ul.photo-list > li:hover {
+  opacity: 1.0;
+}
