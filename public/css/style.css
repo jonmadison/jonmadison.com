@@ -1,3 +1,14 @@
+body {
+  font-family: "Vollkorn", sans-serif;
+  text-align: center;
+  background-image: url("/public/images/jove.jpg");
+  background-size: cover;
+}
+
+div.status-container {
+  height: 80px;
+}
+
 div.photos {
   height: 320px;
   white-space: nowrap;
@@ -18,15 +29,21 @@ ul.photo-list li {
 }
 
 div.feature-box {
-  height: 600px;
-  border: 1px dotted #aeaeae;
-  background-color: #fefefef;
+  height: 400px;
+  background-color: #fefefe;
+  -moz-box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .9), inset -1px -1px 1px rgba(0, 0, 0, .4);
+  -webkit-box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .9), inset -1px -1px 1px rgba(0, 0, 0, .4);
+  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .9), inset -1px -1px 1px rgba(0, 0, 0, .4);
 }
 
 ul.photo-list > li {
-  opacity: 0.5;
+  opacity: 0.75;
   transition: opacity 250ms;
+  margin-right: 10px;
+  height: 500px;
+  box-shadow: inset 10px 10px 10px rgba(255, 255, 255, .9), inset -10px -10px 10px rgba(0, 0, 0, .4);
 }
+
 
 ul.photo-list > li:hover {
   opacity: 1.0;

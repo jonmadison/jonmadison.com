@@ -1,6 +1,7 @@
 import React from 'react';
 
-let getPhotos = function() {
+//todo: promisify
+let fetchPhotos = function() {
     return {
         data: [
             {
@@ -43,7 +44,7 @@ let getPhotos = function() {
 
 let Gallery = React.createClass({
     getInitialState: function() {
-        return getPhotos();
+        return fetchPhotos();
     },
     render: function() {
         return (
@@ -58,4 +59,4 @@ let Gallery = React.createClass({
     }
 });
 
-module.exports = Gallery;
+export default Gallery;

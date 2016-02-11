@@ -63,10 +63,10 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	_reactDom2.default.render(_react2.default.createElement(
-	  _reactRouter.Router,
-	  null,
-	  _routes2.default
-	), document.getElementById('app'));
+	    _reactRouter.Router,
+	    null,
+	    _routes2.default
+	), document.getElementById("app"));
 
 /***/ },
 /* 1 */
@@ -24035,6 +24035,10 @@
 
 	"use strict";
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -24070,7 +24074,7 @@
 	  }
 	});
 
-	module.exports = Main;
+	exports.default = Main;
 
 /***/ },
 /* 208 */
@@ -24078,13 +24082,18 @@
 
 	"use strict";
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var getPhotos = function getPhotos() {
+	//todo: promisify
+	var fetchPhotos = function fetchPhotos() {
 	    return {
 	        data: [{
 	            "id": 0,
@@ -24121,7 +24130,7 @@
 	    displayName: "Gallery",
 
 	    getInitialState: function getInitialState() {
-	        return getPhotos();
+	        return fetchPhotos();
 	    },
 	    render: function render() {
 	        return _react2.default.createElement(
@@ -24142,7 +24151,7 @@
 	    }
 	});
 
-	module.exports = Gallery;
+	exports.default = Gallery;
 
 /***/ },
 /* 209 */
@@ -24150,24 +24159,35 @@
 
 	"use strict";
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _Status = __webpack_require__(210);
+
+	var _Status2 = _interopRequireDefault(_Status);
+
+	var _Learning = __webpack_require__(211);
+
+	var _Learning2 = _interopRequireDefault(_Learning);
+
+	var _Doing = __webpack_require__(212);
+
+	var _Doing2 = _interopRequireDefault(_Doing);
+
+	var _LinkButtons = __webpack_require__(213);
+
+	var _LinkButtons2 = _interopRequireDefault(_LinkButtons);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Home = _react2.default.createClass({
 	    displayName: "Home",
 
-	    getInitialState: function getInitialState() {
-	        return { data: [{
-	                text: "today was a good day",
-	                date: "2016-01-31 20:22"
-	            }, {
-	                text: "i'm gonna be the best i can be",
-	                date: "2016-01-30 15:54"
-	            }] };
-	    },
 	    render: function render() {
 	        return _react2.default.createElement(
 	            "div",
@@ -24178,7 +24198,7 @@
 	                _react2.default.createElement(
 	                    "h3",
 	                    null,
-	                    this.state.data[0].text
+	                    _react2.default.createElement(_Status2.default, null)
 	                )
 	            ),
 	            _react2.default.createElement("div", { className: "row", id: "sharing" }),
@@ -24187,25 +24207,169 @@
 	                { className: "row" },
 	                _react2.default.createElement(
 	                    "div",
-	                    { className: "col-sm-6 feature-box", id: "learning" },
-	                    "learning..."
+	                    { className: "col-sm-5 feature-box", id: "learning" },
+	                    _react2.default.createElement(_Learning2.default, null)
 	                ),
 	                _react2.default.createElement(
 	                    "div",
-	                    { className: "col-sm-6 feature-box", id: "doing" },
-	                    "doing..."
+	                    { className: "col-sm-2" },
+	                    " "
+	                ),
+	                _react2.default.createElement(
+	                    "div",
+	                    { className: "col-sm-5 feature-box", id: "doing" },
+	                    _react2.default.createElement(_Doing2.default, null)
 	                )
 	            ),
 	            _react2.default.createElement(
 	                "div",
 	                { className: "row" },
-	                "jon madison is a  dev, continuous learner, and sharer currently working in Seattle, Washington."
+	                "jon madison is a  dev, continuous learner, picture taker, and sharer currently working in Seattle, Washington."
+	            ),
+	            _react2.default.createElement(
+	                "div",
+	                { className: "row" },
+	                _react2.default.createElement(_LinkButtons2.default, null)
 	            )
 	        );
 	    }
 	});
 
-	module.exports = Home;
+	exports.default = Home;
+
+/***/ },
+/* 210 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	//todo: promisify
+	var fetchStatuses = function fetchStatuses() {
+	    return { data: [{
+	            text: "latest status",
+	            date: "2016-01-31 20:22"
+	        }, {
+	            text: "i'm gonna be the best i can be",
+	            date: "2016-01-30 15:54"
+	        }] };
+	};
+
+	var Status = _react2.default.createClass({
+	    displayName: "Status",
+
+	    getInitialState: function getInitialState() {
+	        return fetchStatuses();
+	    },
+	    render: function render() {
+	        return _react2.default.createElement(
+	            "div",
+	            null,
+	            this.state.data[0].text
+	        );
+	    }
+	});
+
+	exports.default = Status;
+
+/***/ },
+/* 211 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Learning = _react2.default.createClass({
+	    displayName: 'Learning',
+
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'div',
+	            null,
+	            'learning...'
+	        );
+	    }
+	});
+
+	exports.default = Learning;
+
+/***/ },
+/* 212 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Doing = _react2.default.createClass({
+	    displayName: 'Doing',
+
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'div',
+	            null,
+	            'doing...'
+	        );
+	    }
+	});
+
+	exports.default = Doing;
+
+/***/ },
+/* 213 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var LinkButtons = _react2.default.createClass({
+	    displayName: "LinkButtons",
+
+	    render: function render() {
+	        return _react2.default.createElement(
+	            "div",
+	            { className: "linkButtons" },
+	            "Link Buttons go here"
+	        );
+	    }
+	});
+
+	exports.default = LinkButtons;
 
 /***/ }
 /******/ ]);
