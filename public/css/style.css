@@ -2,7 +2,7 @@ body {
   font-family: "Vollkorn", "Helvetica", sans-serif;
   text-align: center;
   background-image: url("/public/images/IMG_4473.PNG");
-  background-size: cover auto;
+  background-size: 130% auto;
   overflow-y: hidden;
   color: #FFD90D;
 }
@@ -13,6 +13,10 @@ body {
     text-align: center;
     background-image: url("/public/images/IMG_4473.PNG");
     background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
   }
 }
 
