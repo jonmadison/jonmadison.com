@@ -49,11 +49,11 @@ let Gallery = React.createClass({
     render: function() {
         return (
             <div className="photos">
-            <ul className="photo-list">
-            {this.state.data.map(o => {
-                return <li key={o.id}><img src={`images/${o.imageName}`} width="480"/></li>;
-            })}
-            </ul>
+                <ul className="photo-list">
+                {this.state.data.slice(0,this.props.photoCount).map(o => {
+                    return <li key={o.id}><img src={`images/${o.imageName}`} width="480"/></li>;
+                })}
+                </ul>
             </div>
         );
     }

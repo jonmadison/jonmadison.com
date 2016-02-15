@@ -1,50 +1,153 @@
 body {
-  font-family: "Vollkorn", sans-serif;
+  font-family: "Vollkorn", "Helvetica", sans-serif;
   text-align: center;
-  background-image: url("/public/images/jove.jpg");
-  background-size: cover;
+/*  background-image: url("/public/images/IMG_4473.PNG");
+  background-size: cover auto;
+  -ms-background-size: 125% auto;
+  -o-background-size: 125% auto;
+  -moz-background-size: 125% auto;
+  -webkit-background-size: 125% auto;*/
+  overflow-y: hidden;
+  color: #FFD90D;
 }
 
-div.status-container {
-  height: 80px;
+@media screen and (max-width: 1280px), screen and (max-height: 1000px) {
+  body {
+    font-family: "Vollkorn", sans-serif;
+    text-align: center;
+/*    background-image: url("/public/images/IMG_4473.PNG");
+    background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;*/
+  }
+}
+
+div.description {
+  font-size: 1.5em;
+  max-width: 800px;
+  margin: 20px auto 40px auto;
+}
+
+div.status-component {
+  background-color: #E8B655;
+  z-index: 1;
+  font-size: 2em;
+  color: #FEFEFE;
+  margin-bottom: 20px;
+}
+
+p.status {
+  padding-top: 15px;
+  z-index: 2;
 }
 
 div.photos {
   height: 320px;
   white-space: nowrap;
   overflow-y: hidden;
-  overflow-x: scroll;
-}
-
-div.home-container {
-  padding: 25px;
+  overflow-x: auto;
 }
 
 ul.photo-list {
   list-style-type: none;
+  padding: 0;
 }
 
 ul.photo-list li {
   display: inline;
 }
 
+ul.photo-list > li {
+  opacity: 0.65;
+  transition: opacity 250ms;
+  margin-right: 10px;
+  height: 550px;
+}
+
+ul.photo-list > li:hover {
+  opacity: 1.0;
+}
+
 div.feature-box {
-  height: 400px;
-  background-color: #fefefe;
+/*    opacity: 1;
+    transition: opacity .5s ease-in;
+*/  display: inline-block;
+  width: 325px;
+  height: 325px;
+  margin: 20px 20px 20px 20px;
+  padding: 15px 0 5px 0;
+  position: relative;
+  overflow: hidden;
+  font-size: 1.25em;
+  background-color: #8755E8;
+  color: #FFF;
   -moz-box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .9), inset -1px -1px 1px rgba(0, 0, 0, .4);
   -webkit-box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .9), inset -1px -1px 1px rgba(0, 0, 0, .4);
   box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .9), inset -1px -1px 1px rgba(0, 0, 0, .4);
 }
 
-ul.photo-list > li {
-  opacity: 0.75;
-  transition: opacity 250ms;
-  margin-right: 10px;
-  height: 500px;
-  box-shadow: inset 10px 10px 10px rgba(255, 255, 255, .9), inset -10px -10px 10px rgba(0, 0, 0, .4);
+
+div.feature-box::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.1;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
 }
 
-
-ul.photo-list > li:hover {
-  opacity: 1.0;
+div.feature-box.learning::before {
+  background-image: url("/public/images/myhead.jpg");
 }
+
+div.feature-box.doing::before {
+  background-image: url("/public/images/clouds.jpg");
+}
+
+div.feature-box.showing::before {
+  background-image: url("/public/images/sunburst.jpg");
+}
+
+div.feature-box ul {
+    padding: 50px;
+    text-align: left;
+    z-index: 2;
+    position: relative;
+}
+
+/*div.feature-box:hover {
+  opacity: 0.7;
+}*/
+
+div.link-buttons {
+  border-spacing: 15px;
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+div.link-buttons ul > li {
+  display: inline;
+  margin: 0 10px 0 10px;
+}
+
+div.link-buttons img {
+  max-width: 75px;
+}
+
