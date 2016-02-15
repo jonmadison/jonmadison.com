@@ -8,12 +8,12 @@
 }
 
 .feature-box.feature-box-load-appear {
-    opacity: 0.0;
+    opacity: 0.2;
     transform: scale(0.1);
-    transition: all 1s;
+    transition: all 0.15s ease-in-out 0.15s;
 }
 
 .feature-box.feature-box-load-appear-active {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1) ;
 }

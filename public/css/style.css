@@ -3,39 +3,30 @@ body {
   text-align: center;
   background-image: url("/public/images/IMG_4473.PNG");
   background-size: cover auto;
-  -ms-background-size: 125% auto;
-  -o-background-size: 125% auto;
-  -moz-background-size: 125% auto;
-  -webkit-background-size: 125% auto;
   overflow-y: hidden;
   color: #FFD90D;
 }
 
-@media screen and (max-width: 1280px), screen and (max-height: 1000px) {
+@media screen and (max-width: 860px), screen and (max-height: 640px) {
   body {
-    font-family: "Vollkorn", sans-serif;
+    font-family: "Vollkorn", "Helvetica", sans-serif;
     text-align: center;
     background-image: url("/public/images/IMG_4473.PNG");
     background-size: cover;
-    -ms-background-size: cover;
-    -o-background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
   }
 }
 
 div.description {
   font-size: 1.5em;
   max-width: 800px;
-  margin: 20px auto 40px auto;
+  margin: 20px auto 20px auto;
 }
 
 div.status-component {
   background-color: #E8B655;
   z-index: 1;
-  font-size: 2em;
+  font-size: 1.5em;
   color: #FEFEFE;
-  margin-bottom: 20px;
 }
 
 p.status {
@@ -72,17 +63,15 @@ ul.photo-list > li:hover {
 
 div.feature-box {
   display: inline-block;
-  width: 325px;
-  height: 325px;
-  margin: 20px 20px 20px 20px;
+  width: 275px;
+  height: 275px;
+  margin: 20px 20px 0px 20px;
   padding: 15px 0 5px 0;
   position: relative;
   overflow: hidden;
-  font-size: 1.25em;
+  font-size: 1.15em;
   background-color: #8755E8;
   color: #FFF;
-  -moz-box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .9), inset -1px -1px 1px rgba(0, 0, 0, .4);
-  -webkit-box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .9), inset -1px -1px 1px rgba(0, 0, 0, .4);
   box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .9), inset -1px -1px 1px rgba(0, 0, 0, .4);
 }
 
@@ -99,27 +88,23 @@ div.feature-box::before {
     opacity: 0.1;
     background-repeat: no-repeat;
     background-position: 50% 0;
-    -ms-background-size: cover;
-    -o-background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
     background-size: cover;
 }
 
-div.feature-box.learning::before {
+div.feature-box#learning::before {
   background-image: url("/public/images/myhead.jpg");
 }
 
-div.feature-box.doing::before {
+div.feature-box#doing::before {
   background-image: url("/public/images/clouds.jpg");
 }
 
-div.feature-box.showing::before {
+div.feature-box#showing::before {
   background-image: url("/public/images/sunburst.jpg");
 }
 
 div.feature-box ul {
-    padding: 50px;
+    padding: 30px;
     text-align: left;
     z-index: 2;
     position: relative;
@@ -130,7 +115,6 @@ div.feature-box ul {
 }*/
 
 div.link-buttons {
-  border-spacing: 15px;
   width: 100%;
 }
 

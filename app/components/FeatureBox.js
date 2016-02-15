@@ -12,8 +12,8 @@ let FeatureBox = React.createClass({
                     transitionAppearTimeout={500}
                     transitionEnterTimeout={500}
                     transitionLeaveTimeout={500}>
-                        <div key={uniqueid()} className="feature-box" id="{this.props.name}">
-                            <h1>{this.props.name}</h1>
+                        <div key={uniqueid()} className="feature-box" id={this.props.name}>
+                            <h2>{this.props.name}</h2>
                             <ul>
                                 {
                                     this.props.items.map( (item) => {
