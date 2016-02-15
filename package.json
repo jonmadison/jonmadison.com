@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.2",
+    "express": "^4.13.4",
     "history": "^1.17.0",
     "ionicons": "^2.0.1",
     "jquery": "^2.2.0",
@@ -30,6 +31,7 @@
     "babel-preset-react": "^6.3.13",
     "eslint": "^1.10.3",
     "eslint-plugin-react": "^3.16.1",
+    "must": "^0.13.1",
     "supertest": "^1.2.0",
     "webpack-dev-server": "^1.14.1"
   }
