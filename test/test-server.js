@@ -2,7 +2,7 @@
 /* eslint camelcase: [2, {properties: "never"} ] */
 
 var expect = require('must');
-var app = require('../server');
+var app = require('../jonmadison.com');
 var request = require('supertest');
 
 
