@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 //todo: promisify
 let fetchPhotos = function() {
@@ -51,7 +52,16 @@ let Gallery = React.createClass({
             <div className="photos">
                 <ul className="photo-list">
                 {this.state.data.slice(0,this.props.photoCount).map(o => {
-                    return <li key={o.id}><img src={`images/${o.imageName}`} width="480"/></li>;
+                    return (
+                        <ReactCSSTransitionGroup
+                        transitionName="gallery-load"
+                        transitionAppear={true}
+                        transitionAppearTimeout={10000}
+                        transitionEnterTimeout={100000}
+                        transitionLeaveTimeout={10000}>
+                            <li key={o.id}><img src={`images/${o.imageName}`} width="480"/></li>
+                        </ReactCSSTransitionGroup>
+                    )
                 })}
                 </ul>
             </div>

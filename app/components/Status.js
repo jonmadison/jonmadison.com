@@ -9,7 +9,6 @@ let Status = React.createClass({
                 <div className="row status-component">
                     <div className="col-sm-1">
                         <a href="">
-                            <i className="icon ion-arrow-left-b"></i>
                         </a>
                     </div>
                     <div className="col-sm-10">
@@ -26,7 +25,6 @@ let Status = React.createClass({
                     </div>
                     <div className="col-sm-1">
                         <a href="">
-                            <i className="icon ion-arrow-right-b"></i>
                         </a>
                     </div>
                 </div>

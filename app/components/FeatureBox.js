@@ -13,7 +13,7 @@ let FeatureBox = React.createClass({
                     transitionEnterTimeout={500}
                     transitionLeaveTimeout={500}>
                         <div key={uniqueid()} className="feature-box" id={this.props.name}>
-                            <h2>{this.props.name}</h2>
+                            <h1>{this.props.name}</h1>
                             <ul>
                                 {
                                     this.props.items.map( (item) => {
