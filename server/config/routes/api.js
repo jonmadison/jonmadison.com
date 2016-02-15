@@ -1,12 +1,9 @@
-"use strict";
-let env = process.env.NODE_ENV || "development";
+var express = require('express');
+var router = express.Router();
 
-///flickr/photos/smartbrother/?tags=[\"featured\"]
-let routes = function(app) {
-    app.get("/api/flickr/photos/:userid",
-        function(req, res) {
-            return res.status(200).send({"result": "ok"});
-        });
-};
+router.get("/api/flickr/photos/:userid", function(req, res, next) {
+    res.status(200);
+    res.send({"status":"ok"});
+});
 
-module.exports = routes;
+module.exports = router;
