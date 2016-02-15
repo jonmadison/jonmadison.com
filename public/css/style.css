@@ -74,7 +74,7 @@ div.feature-box {
   position: relative;
   overflow: hidden;
   font-size: 1.15em;
-  background-color: #8755E8;
+  background-color: #E7B55D;
   color: #FFF;
   box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .9), inset -1px -1px 1px rgba(0, 0, 0, .4);
 }
@@ -95,7 +95,7 @@ div.feature-box::before {
     background-size: cover;
 }
 
-div.feature-box#learning::before {
+/*div.feature-box#learning::before {
   background-image: url("/public/images/myhead.jpg");
 }
 
@@ -105,7 +105,7 @@ div.feature-box#doing::before {
 
 div.feature-box#showing::before {
   background-image: url("/public/images/sunburst.jpg");
-}
+}*/
 
 div.feature-box ul {
     padding: 30px;
