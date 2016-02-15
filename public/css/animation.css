@@ -6,14 +6,14 @@
     opacity: 1;
     transition: opacity .5s ease-in;
 }
-/*
+
 .feature-box.feature-box-load-appear {
     opacity: 0.0;
     transform: scale(0.1);
-    transition: all 0.5s;
+    transition: all 1s;
 }
 
 .feature-box.feature-box-load-appear-active {
     opacity: 1;
     transform: scale(1);
-}*/
+}

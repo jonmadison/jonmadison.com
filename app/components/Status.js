@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import uniqueid from 'lodash.uniqueid';
 
 let Status = React.createClass({
     render: function() {
@@ -15,10 +16,10 @@ let Status = React.createClass({
                         <ReactCSSTransitionGroup
                         transitionName="status-appear"
                         transitionAppear={true}
-                        transitionAppearTimeout={500}
-                        transitionEnterTimeout={0}
-                        transitionLeaveTimeout={0}>
-                            <p className="status">
+                        transitionAppearTimeout={10000}
+                        transitionEnterTimeout={100000}
+                        transitionLeaveTimeout={10000}>
+                            <p key={uniqueid()} className="status">
                             {this.props.statuses.data[Number.parseInt(this.props.index)].text}
                             </p>
                         </ReactCSSTransitionGroup>

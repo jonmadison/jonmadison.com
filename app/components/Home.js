@@ -29,7 +29,7 @@ let Home = React.createClass({
         //Gallery component is responsible for its own fetching from outside
         //services.
         let result = { statuses: fetchStatuses(),
-                 learning: ["React &amp; Friends", "Swift 2.0", "Rx"],
+                 learning: ["React & Friends", "Swift 2.0", "Rx"],
                  doing: ["Mobile Development", "APIs", "Inspiring ppl"],
                  showing: ["Ppl how to node", "Testing and building APIs", "Empathy"]
                 };
@@ -48,7 +48,7 @@ let Home = React.createClass({
                 </div>
                 <div className="row description">
                     <div className="center-block">
-                      jon madison is a technologist, continuous learner, picture taker,
+                      jon madison is a full-stack technologist, continuous learner, picture taker,
                       and sharer currently working in Seattle, Washington.
                     </div>
                 </div>
