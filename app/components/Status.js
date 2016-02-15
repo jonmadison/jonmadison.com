@@ -14,12 +14,12 @@ let Status = React.createClass({
                     </div>
                     <div className="col-sm-10">
                         <ReactCSSTransitionGroup
-                        transitionName="status-appear"
+                        transitionName="status-load"
                         transitionAppear={true}
                         transitionAppearTimeout={10000}
                         transitionEnterTimeout={100000}
                         transitionLeaveTimeout={10000}>
-                            <p key={uniqueid()} className="status">
+                            <p className="status">
                             {this.props.statuses.data[Number.parseInt(this.props.index)].text}
                             </p>
                         </ReactCSSTransitionGroup>

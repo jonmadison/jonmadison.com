@@ -4,7 +4,7 @@
 
 .status.status-load-appear-active {
     opacity: 1;
-    transition: opacity .5s ease-in;
+    transition: all 1s ease-in;
 }
 
 .feature-box.feature-box-load-appear {
