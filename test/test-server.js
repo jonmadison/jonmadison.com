@@ -7,9 +7,21 @@ var request = require('supertest');
 
 
 describe('data server -- flickr', function() {
-    it('returns a list of photos based on user and tag', (done) => {
+    it('returns 404 on unknown route', function(done) {
         request(app)
-        .get("/api/flickr/photos/smartbrother/?tags=[\"featured\"]")
-        .expect(200,done);
+            .get("/api/blahblah")
+            .end(function(err, res) {
+                res.status.must.equal(404);
+                done();
+            });
+    });
+
+    it('returns a list of photos based on user and tag', function(done) {
+        request(app)
+            .get("/api/flickr/photos/smartbrother/?tags=[\"featured\"]")
+            .end(function(err, res) {
+                res.status.must.equal(200);
+                done();
+            });
     });
 });
