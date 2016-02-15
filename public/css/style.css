@@ -31,7 +31,6 @@ div.status-component {
 
 p.status {
   color: #fff;
-  font-weight: 800;
   font-size: 1.2em;
   padding-top: 15px;
   z-index: 2;
@@ -75,7 +74,7 @@ div.feature-box {
   overflow: hidden;
   font-size: 1.5em;
   color: #FFF;
-  background-color:rgba(231, 142, 85, 0.25);
+  background-color:rgba(231, 142, 85, 0.15);
   box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .2), inset -1px -1px 1px rgba(0, 0, 0, .2);
 }
 
@@ -92,23 +91,11 @@ div.feature-box::before {
     width: 100%;
     height: 100%;
     z-index: 1;
-    opacity: 0.1;
+    opacity: 0.05;
     background-repeat: no-repeat;
     background-position: 50% 0;
     background-size: cover;
 }
-
-/*div.feature-box#learning::before {
-  background-image: url("/public/images/myhead.jpg");
-}
-
-div.feature-box#doing::before {
-  background-image: url("/public/images/clouds.jpg");
-}
-
-div.feature-box#showing::before {
-  background-image: url("/public/images/sunburst.jpg");
-}*/
 
 div.feature-box ul {
     padding: 30px;
