@@ -71,9 +71,7 @@ ul.photo-list > li:hover {
 }
 
 div.feature-box {
-/*    opacity: 1;
-    transition: opacity .5s ease-in;
-*/  display: inline-block;
+  display: inline-block;
   width: 325px;
   height: 325px;
   margin: 20px 20px 20px 20px;

@@ -14,9 +14,10 @@
     "history": "^1.17.0",
     "ionicons": "^2.0.1",
     "jquery": "^2.2.0",
-    "react": "^0.14.6",
+    "lodash.uniqueid": "^3.2.0",
+    "react": "^0.14.7",
     "react-addons-css-transition-group": "^0.14.7",
-    "react-dom": "^0.14.6",
+    "react-dom": "^0.14.7",
     "react-router": "^1.0.3",
     "tether": "^1.1.1",
     "webpack": "^1.12.12"

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import uniqueid from 'lodash.uniqueid';
 
 let FeatureBox = React.createClass({
     render: function() {
@@ -10,7 +11,7 @@ let FeatureBox = React.createClass({
                         <ul>
                             {
                                 this.props.items.map( (item) => {
-                                    return <li>{item}</li>;
+                                    return <li key={uniqueid()}>{item}</li>;
                                 })
                             }
                         </ul>
