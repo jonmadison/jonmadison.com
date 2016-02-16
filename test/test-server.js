@@ -50,4 +50,16 @@ describe("data server -- flickr", function() {
                 done();
             });
     });
+
+    it("returns 100 photos if no results count given", function(done) {
+        request(app)
+            .get(`/api/flickr/photos/smartbrother`)
+            .end(function(err, res) {
+                res.status.must.equal(200);
+                res.body.must.have.keys(["data"]);
+                res.body.data.length.must.equal(100);
+                res.body.data[0].must.have.keys(["id","imageName","altText","tags"]);
+                done();
+            });
+    });
 });
