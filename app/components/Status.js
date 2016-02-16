@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import uniqueid from 'lodash.uniqueid';
 
 let Status = React.createClass({
     render: function() {

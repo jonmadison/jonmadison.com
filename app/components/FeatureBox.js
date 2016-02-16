@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import uniqueid from 'lodash.uniqueid';
+import UniqueId from 'lodash.uniqueid';
 
 let FeatureBox = React.createClass({
     render: function() {
@@ -12,12 +12,12 @@ let FeatureBox = React.createClass({
                     transitionAppearTimeout={500}
                     transitionEnterTimeout={500}
                     transitionLeaveTimeout={500}>
-                        <div key={uniqueid()} className="feature-box" id={this.props.name}>
+                        <div key={UniqueId()} className="feature-box" id={this.props.name}>
                             <h1>{this.props.name}</h1>
                             <ul>
                                 {
                                     this.props.items.map( (item) => {
-                                        return <li key={uniqueid()}>{item}</li>;
+                                        return <li key={UniqueId()}>{item}</li>;
                                     })
                                 }
                             </ul>
