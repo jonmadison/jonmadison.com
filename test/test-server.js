@@ -34,4 +34,20 @@ describe("data server -- flickr", function() {
                 done();
             });
     });
+
+    it("returns a list of photos if no tags given", function(done) {
+        let query = {
+            results: 10
+        };
+
+        request(app)
+            .get(`/api/flickr/photos/smartbrother/?${qs.stringify(query)}`)
+            .end(function(err, res) {
+                res.status.must.equal(200);
+                res.body.must.have.keys(["data"]);
+                res.body.data.length.must.equal(10);
+                res.body.data[0].must.have.keys(["id","imageName","altText","tags"]);
+                done();
+            });
+    });
 });
