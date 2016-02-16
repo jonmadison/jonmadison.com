@@ -1,9 +1,11 @@
-var express = require('express');
-var router = express.Router();
+"use strict";
 
-router.get("/flickr/photos/:userid", function(req, res, next) {
-    res.status(200);
-    res.send({"status":"ok"});
+let express = require("express");
+let router = express.Router();
+let flickrAdapter = require("../../controllers/flickr");
+
+router.get("/flickr/photos/:userid", function(req, res) {
+    return flickrAdapter.index.json(req,res);
 });
 
 module.exports = router;
