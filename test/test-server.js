@@ -19,8 +19,8 @@ describe("data server -- flickr", function() {
 
     it("returns a list of photos based on user and tag", function(done) {
         let query = {
-            tags: ["featured"],
-            results: 5
+            tags: ["webfeatured"],
+            results: 10
         };
 
         request(app)
@@ -29,7 +29,8 @@ describe("data server -- flickr", function() {
                 res.status.must.equal(200);
                 res.body.must.have.keys(["data"]);
                 res.body.data.length.must.equal(5);
-                res.body.data[0].must.have.keys(["id","imageName","altText"]);
+                res.body.data[0].must.have.keys(["id","imageName","altText","tags"]);
+                res.body.data[0].tags.must.include("featured");
                 done();
             });
     });
