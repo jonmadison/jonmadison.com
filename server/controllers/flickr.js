@@ -6,29 +6,6 @@ let global = require("../config/config");
 let qs = require('qs');
 let _ = require("lodash");
 
-// exports.index = {
-//   json: function getJson(req,res) {
-//     pg.connect(conString,function(err,client,done){
-//       if(err) {
-//         return res.status(500).json({ error:err });
-//       }
-//       var plants = [];
-
-//       var query = client.query('SELECT * from PLANTS order by name ASC limit ' + MAX_RESULTS);
-//       query.on('row', function(row) {
-//         plants.push(row);
-//       });
-
-//       query.on('end',function(){
-//         done(); //release to pool
-//         var results = { plants: plants };
-//         // console.log(results);
-//         return res.status(200).json(results);
-//       })
-//     })
-//   }
-// }
-
 const MAX_RESULTS_PER_PAGE = 100;
 
 let flickrIndex = {
@@ -59,6 +36,7 @@ let flickrIndex = {
                 req.query.tags.map((tag) => {
                     let filtered = body.photos.photo.filter( (p) => { return (p.tags.indexOf(tag) > -1)} );
                     photos = _.concat(photos,filtered);
+                    //console.log(`found ${filtered.length} images with tag ${tag}`);
                 });
             } else {
                 photos = body.photos.photo;

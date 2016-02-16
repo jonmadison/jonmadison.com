@@ -30,7 +30,7 @@ describe("data server -- flickr", function() {
                 res.body.must.have.keys(["data"]);
                 res.body.data.length.must.equal(5);
                 res.body.data[0].must.have.keys(["id","imageName","altText","tags"]);
-                res.body.data[0].tags.must.include("featured");
+                res.body.data[0].tags.must.include("webfeatured");
                 done();
             });
     });
