@@ -11,6 +11,7 @@ body {
 @media screen and (max-width: 860px), screen and (max-height: 640px) {
   body {
     text-align: center;
+    background-image: url("/images/20160108-IMG_7700.jpg");
     background-size: cover;
   }
 
@@ -43,33 +44,6 @@ p.status-date {
   font-size: 0.5em;
   padding-top: 15px;
   z-index: 2;
-}
-
-div.photos {
-  height: 320px;
-  white-space: nowrap;
-  overflow-y: hidden;
-  overflow-x: auto;
-}
-
-ul.photo-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-ul.photo-list li {
-  display: inline;
-}
-
-ul.photo-list > li {
-  opacity: 0.65;
-  transition: opacity 250ms;
-  margin-right: 10px;
-  height: 550px;
-}
-
-ul.photo-list > li:hover {
-  opacity: 1.0;
 }
 
 div.feature-box {
