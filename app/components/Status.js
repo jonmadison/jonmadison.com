@@ -20,6 +20,9 @@ let Status = React.createClass({
                             <p className="status">
                             {this.props.statuses.data[Number.parseInt(this.props.index)].text}
                             </p>
+                            <p className="status-date">
+                            posted {this.props.statuses.data[Number.parseInt(this.props.index)].date}
+                            </p>
                         </ReactCSSTransitionGroup>
                     </div>
                     <div className="col-sm-1">
