@@ -29,7 +29,7 @@ let flickrIndex = {
             let result = yield request(url);
             let response = result;
             let body = JSON.parse(result.body);
-
+            // console.log(JSON.stringify(body));
             let photos = [];
 
             if(req.query.tags) {
@@ -49,12 +49,13 @@ let flickrIndex = {
                     imageName: photoUrl,
                     altText: p.title,
                     tags: p.tags
-                }
+                };
                 return result;
             });
 
-            let dataResult = {data: flickrPhotos};
+            let dataResult = flickrPhotos;
             res.status(200);
+            console.log(JSON.stringify(dataResult));
             res.send(dataResult);
         }).catch(function (err) {
             res.status(500);

@@ -30,7 +30,7 @@ let Main = React.createClass({
           <div className="container-fluid">
             <div className="row">
               <div className="photos">
-                <Gallery photoCount="4" tagName="featured" />
+                <Gallery photoCount="500" tagName="featured" />
               </div>
             </div>
             <div className="row">

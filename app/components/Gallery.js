@@ -1,51 +1,31 @@
-import React from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-
-//todo: promisify
-let fetchPhotos = function() {
-    return {
-        data: [
-            {
-                "id": 0,
-                "imageName": "0.jpg",
-                "altText": "zero"
-            },
-            {
-                "id": 1,
-                "imageName": "1.jpg",
-                "altText": "one"
-            },
-            {
-                "id": 2,
-                "imageName": "2.jpg",
-                "altText": "two"
-            },
-            {
-                "id": 3,
-                "imageName": "3.jpg",
-                "altText": "three"
-            },
-            {
-                "id": 4,
-                "imageName": "4.jpg",
-                "altText": "four"
-            },
-            {
-                "id": 5,
-                "imageName": "5.jpg",
-                "altText": "five"
-            },
-            {
-                "id": 6,
-                "imageName": "6.jpg",
-                "altText": "six"
-            }
-        ]};
-};
+import React from "react";
+import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+import Axios from "axios";
+let qs = require("qs");
 
 let Gallery = React.createClass({
     getInitialState: function() {
-        return fetchPhotos();
+        return {data: []};
+    },
+    componentDidMount: function() {
+        let query = {
+            tags: ["webfeatured"],
+            results: this.props.photoCount
+        };
+
+        let url = `/api/flickr/photos/smartbrother/?${qs.stringify(query)}`;
+
+        Axios.get(url)
+        .then( (response) => {
+            if(response.error) {
+                console.log(`error: ${response.error}`);
+            } else {
+                this.setState(response);
+            }
+        })
+        .catch(function (response) {
+            console.log(response);
+        });
     },
     render: function() {
         return (
@@ -53,14 +33,7 @@ let Gallery = React.createClass({
                 <ul className="photo-list">
                 {this.state.data.slice(0,this.props.photoCount).map(o => {
                     return (
-                        <ReactCSSTransitionGroup
-                        transitionName="gallery-load"
-                        transitionAppear={true}
-                        transitionAppearTimeout={10000}
-                        transitionEnterTimeout={100000}
-                        transitionLeaveTimeout={10000}>
-                            <li key={o.id}><img src={`images/${o.imageName}`} width="480"/></li>
-                        </ReactCSSTransitionGroup>
+                        <li key={o.id}><img src={o.imageName} height="320"/></li>
                     )
                 })}
                 </ul>
