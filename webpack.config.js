@@ -1,7 +1,12 @@
+"use strict";
+let path = require("path");
+
 module.exports = {
     entry: "./app/App.js",
     output: {
-        filename: "public/bundle.js"
+        filename: "bundle.js",
+        path: path.join(__dirname, "public"),
+        publicPath: "./public/"
     },
     module: {
         loaders: [
@@ -16,6 +21,10 @@ module.exports = {
             {
                 test: /\.(eot|woff).*$/,
                 loader: "file-loader"
+            },
+            {
+                test: /\.jpg$/,
+                loader: "file-loader?name=[path][name].[ext]"
             }
         ]
     }
