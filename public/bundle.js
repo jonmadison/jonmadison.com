@@ -26863,7 +26863,7 @@
 
 
 	// module
-	exports.push([module.id, "div.photos {\n  height: 320px;\n  scroll-snap-points-x: repeat(420px);\n  white-space: nowrap;\n  overflow-y: hidden;\n  overflow-x: auto;\n}\n\nul.photo-list {\n  list-style-type: none;\n  padding: 0;\n}\n\nul.photo-list li {\n  display: inline;\n}\n\nul.photo-list > li {\n  opacity: 0.65;\n  transition: opacity 250ms;\n  margin-right: 10px;\n  height: 550px;\n}\n\nul.photo-list > li:hover {\n  opacity: 1.0;\n}\n\n.feature-box.gallery-load-appear {\n    opacity: 0.2;\n    transform: scale(0.1);\n    transition: all 0.15s ease-in-out 0.15s;\n}\n\n.feature-box.gallery-load-appear-active {\n    opacity: 1;\n    transform: scale(1) ;\n}\n", ""]);
+	exports.push([module.id, "div.photos {\n  height: 320px;\n  scroll-snap-points-x: repeat(420px);\n  scroll-snap-type: mandatory;\n  white-space: nowrap;\n  overflow-y: hidden;\n  overflow-x: auto;\n}\n\nul.photo-list {\n  list-style-type: none;\n  padding: 0;\n}\n\nul.photo-list li {\n  display: inline;\n}\n\nul.photo-list > li {\n  opacity: 0.65;\n  transition: opacity 250ms;\n  margin-right: 10px;\n  height: 550px;\n}\n\nul.photo-list > li:hover {\n  opacity: 1.0;\n}\n\n.feature-box.gallery-load-appear {\n    opacity: 0.2;\n    transform: scale(0.1);\n    transition: all 0.15s ease-in-out 0.15s;\n}\n\n.feature-box.gallery-load-appear-active {\n    opacity: 1;\n    transform: scale(1) ;\n}\n", ""]);
 
 	// exports
 
