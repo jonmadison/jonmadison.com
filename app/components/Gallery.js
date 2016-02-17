@@ -1,51 +1,54 @@
 import React from "react";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import Axios from "axios";
+import UniqueId from 'lodash.uniqueid';
 let qs = require("qs");
+
+require("style!css!../../public/css/Gallery.css");
 
 let fetchPlaceholders = function() {
     return {
         data: [
             {
                 "id": 0,
-                "imageName": "0.jpg",
+                "imageName": "/images/0.jpg",
                 "altText": "zero"
             },
             {
                 "id": 1,
-                "imageName": "1.jpg",
+                "imageName": "/images/1.jpg",
                 "altText": "one"
             },
             {
                 "id": 2,
-                "imageName": "2.jpg",
+                "imageName": "/images/2.jpg",
                 "altText": "two"
             },
             {
                 "id": 3,
-                "imageName": "3.jpg",
+                "imageName": "/images/3.jpg",
                 "altText": "three"
             },
             {
                 "id": 4,
-                "imageName": "4.jpg",
+                "imageName": "/images/4.jpg",
                 "altText": "four"
             },
             {
                 "id": 5,
-                "imageName": "5.jpg",
+                "imageName": "/images/5.jpg",
                 "altText": "five"
             },
             {
                 "id": 6,
-                "imageName": "6.jpg",
+                "imageName": "/images/6.jpg",
                 "altText": "six"
             }
         ]};
 };
 let Gallery = React.createClass({
     getInitialState: function() {
-        return fetchPlaceholders();
+        return {data: []};
     },
     componentDidMount: function() {
         let query = {
@@ -57,26 +60,34 @@ let Gallery = React.createClass({
 
         Axios.get(url)
         .then( (response) => {
-            if(response.error) {
+            if(response.status !== 200) {
                 this.setState(fetchPlaceholders()["data"]);
             } else {
                 this.setState(response);
             }
         })
         .catch(function (response) {
+            console.log("got flickr response (catch)");
             this.setState(fetchPlaceholders()["data"]);
         });
     },
     render: function() {
         return (
             <div className="photos">
-                <ul className="photo-list">
-                {this.state.data.slice(0,this.props.photoCount).map(o => {
-                    return (
-                        <li key={o.id}><img src={o.imageName} height="320"/></li>
-                    );
-                })}
-                </ul>
+                <ReactCSSTransitionGroup
+                transitionName="gallery-load"
+                transitionAppear={true}
+                transitionAppearTimeout={10000}
+                transitionEnterTimeout={100000}
+                transitionLeaveTimeout={10000}>
+                    <ul className="photo-list">
+                    {this.state.data.slice(0,this.props.photoCount).map(o => {
+                        return (
+                                <li key={o.id}><img  src={o.imageName} height="320"/></li>
+                        );
+                    })}
+                    </ul>
+                </ReactCSSTransitionGroup>
             </div>
         );
     }

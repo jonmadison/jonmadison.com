@@ -10,21 +10,10 @@
 .feature-box.feature-box-load-appear {
     opacity: 0.2;
     transform: scale(0.1);
-    transition: all 0.15s ease-in-out 0.15s;
+    transition: all 5s ease-in-out 0.5s;
 }
 
 .feature-box.feature-box-load-appear-active {
-    opacity: 1;
-    transform: scale(1) ;
-}
-
-.feature-box.gallery-load-appear {
-    opacity: 0.2;
-    transform: scale(0.1);
-    transition: all 0.15s ease-in-out 0.15s;
-}
-
-.feature-box.gallery-load-appear-active {
     opacity: 1;
     transform: scale(1) ;
 }
