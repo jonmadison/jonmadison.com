@@ -27226,8 +27226,8 @@
 	        //services.
 	        var result = { statuses: fetchStatuses(),
 	            learning: ["React & Friends", "Swift 2.0", "Rx"],
-	            doing: ["Mobile Development", "APIs", "Inspiring ppl"],
-	            showing: ["Ppl how to node", "Testing and building APIs", "Empathy"]
+	            doing: ["iOS Development", "APIs", "TDD", "Inspiring ppl"],
+	            showing: ["Ppl how to node", "How to build Web APIs", "Empathy"]
 	        };
 	        return result;
 	    },
