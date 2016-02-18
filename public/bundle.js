@@ -26862,7 +26862,7 @@
 
 
 	// module
-	exports.push([module.id, "div.photo-gallery {\n  height: 320px;\n  white-space: nowrap;\n  overflow-y: hidden;\n  overflow-x: auto;\n  filter: blur(5px);\n  -webkit-filter: blur(5px);\n  -moz-filter: blur(5px);\n  -o-filter: blur(5px);\n  -ms-filter: blur(5px);\n}\n\nul.photo-gallery-list {\n  list-style-type: none;\n  padding: 0;\n}\n\nul.photo-gallery-list li {\n  display: inline;\n}\n\nul.photo-gallery-list > li {\n  margin-right: 10px;\n  height: 550px;\n}\n\n/* animation */\n.photo-gallery-load..photo-gallery-load-appear {\n    opacity: 0.0;\n }\n\n.photo-gallery-load.photo-gallery-load-appear-active {\n   opacity: 1;\n   transition: opacity 2s ease-in;\n}\n", ""]);
+	exports.push([module.id, "div.photo-gallery {\n  height: 320px;\n  white-space: nowrap;\n  overflow-y: hidden;\n  overflow-x: auto;\n}\n\nul.photo-gallery-list {\n  list-style-type: none;\n  padding: 0;\n}\n\nul.photo-gallery-list li {\n  display: inline;\n}\n\nul.photo-gallery-list > li {\n  margin-right: 10px;\n  height: 550px;\n}\n\n/* animation */\n.photo-gallery-load..photo-gallery-load-appear {\n    opacity: 0.0;\n }\n\n.photo-gallery-load.photo-gallery-load-appear-active {\n   opacity: 1;\n   transition: opacity 2s ease-in;\n}\n", ""]);
 
 	// exports
 

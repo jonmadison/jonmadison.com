@@ -3,11 +3,6 @@ div.photo-gallery {
   white-space: nowrap;
   overflow-y: hidden;
   overflow-x: auto;
-  filter: blur(5px);
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
 }
 
 ul.photo-gallery-list {
