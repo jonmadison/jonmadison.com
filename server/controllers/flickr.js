@@ -31,16 +31,14 @@ let flickrIndex = {
             let result = yield request(url);
             let response = result;
             let body = JSON.parse(result.body);
-            console.log(`RESULT: ${JSON.stringify(result)}`);
-            console.log(`BODY: ${JSON.stringify(body)}`);
             let photos = [];
 
             if(req.query.tags) {
-                req.query.tags.map((tag) => {
+                for (let tag of req.query.tags) {
                     let filtered = body.photos.photo.filter( (p) => { return (p.tags.indexOf(tag) > -1)} );
                     photos = _.concat(photos,filtered);
-                    //console.log(`found ${filtered.length} images with tag ${tag}`);
-                });
+                    // console.log(`found ${filtered.length} images with tag ${tag}`);
+                }
             } else {
                 photos = body.photos.photo;
             }
@@ -58,7 +56,6 @@ let flickrIndex = {
 
             let dataResult = flickrPhotos;
             res.status(200);
-            console.log(JSON.stringify(dataResult));
             res.send(dataResult);
         }).catch(function (err) {
             res.status(500);
