@@ -48,7 +48,7 @@ let fetchPlaceholders = function() {
 };
 let Gallery = React.createClass({
     getInitialState: function() {
-        return fetchPlaceholders();
+        return {data: []};
     },
     componentDidMount: function() {
         let query = {
@@ -72,22 +72,22 @@ let Gallery = React.createClass({
     },
     render: function() {
         return (
-            <div className="photos">
-                <ReactCSSTransitionGroup
-                transitionName="gallery-load"
-                transitionAppear={true}
-                transitionAppearTimeout={10000}
-                transitionEnterTimeout={100000}
-                transitionLeaveTimeout={10000}>
-                    <ul className="photo-list">
-                    {this.state.data.slice(0,this.props.photoCount).map(o => {
-                        return (
-                                <li key={o.id}><img  src={o.imageName} height="320"/></li>
-                        );
-                    })}
-                    </ul>
-                </ReactCSSTransitionGroup>
-            </div>
+            <ReactCSSTransitionGroup
+            transitionName="photo-gallery-load"
+            transitionAppear={true}
+            transitionAppearTimeout={2000}
+            transitionEnterTimeout={2000}
+            transitionLeaveTimeout={2000}>
+               <div className="photo-gallery">
+                    <ul className="photo-gallery-list">
+                             {this.state.data.slice(0,this.props.photoCount).map(o => {
+                                return (
+                                        <li key={o.id}><img src={o.imageName} height="320"/></li>
+                                );
+                            })}
+                     </ul>
+                </div>
+            </ReactCSSTransitionGroup>
         );
     }
 });

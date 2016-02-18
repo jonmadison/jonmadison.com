@@ -24178,7 +24178,7 @@
 	    displayName: "Gallery",
 
 	    getInitialState: function getInitialState() {
-	        return fetchPlaceholders();
+	        return { data: [] };
 	    },
 	    componentDidMount: function componentDidMount() {
 	        var _this = this;
@@ -24202,19 +24202,19 @@
 	    },
 	    render: function render() {
 	        return _react2.default.createElement(
-	            "div",
-	            { className: "photos" },
+	            _reactAddonsCssTransitionGroup2.default,
+	            {
+	                transitionName: "photo-gallery-load",
+	                transitionAppear: true,
+	                transitionAppearTimeout: 2000,
+	                transitionEnterTimeout: 2000,
+	                transitionLeaveTimeout: 2000 },
 	            _react2.default.createElement(
-	                _reactAddonsCssTransitionGroup2.default,
-	                {
-	                    transitionName: "gallery-load",
-	                    transitionAppear: true,
-	                    transitionAppearTimeout: 10000,
-	                    transitionEnterTimeout: 100000,
-	                    transitionLeaveTimeout: 10000 },
+	                "div",
+	                { className: "photo-gallery" },
 	                _react2.default.createElement(
 	                    "ul",
-	                    { className: "photo-list" },
+	                    { className: "photo-gallery-list" },
 	                    this.state.data.slice(0, this.props.photoCount).map(function (o) {
 	                        return _react2.default.createElement(
 	                            "li",
@@ -26862,7 +26862,7 @@
 
 
 	// module
-	exports.push([module.id, "div.photos {\n  height: 320px;\n  white-space: nowrap;\n  overflow-y: hidden;\n  overflow-x: auto;\n}\n\nul.photo-list {\n  list-style-type: none;\n  padding: 0;\n}\n\nul.photo-list li {\n  display: inline;\n}\n\nul.photo-list > li {\n  opacity: 0.65;\n  transition: opacity 250ms;\n  margin-right: 10px;\n  height: 550px;\n}\n\nul.photo-list > li:hover {\n  opacity: 1.0;\n}\n\n.feature-box.gallery-load-appear {\n    opacity: 0.2;\n    transform: scale(0.1);\n    transition: all 0.15s ease-in-out 0.15s;\n}\n\n.feature-box.gallery-load-appear-active {\n    opacity: 1;\n    transform: scale(1) ;\n}\n", ""]);
+	exports.push([module.id, "div.photo-gallery {\n  height: 320px;\n  white-space: nowrap;\n  overflow-y: hidden;\n  overflow-x: auto;\n  filter: blur(5px);\n  -webkit-filter: blur(5px);\n  -moz-filter: blur(5px);\n  -o-filter: blur(5px);\n  -ms-filter: blur(5px);\n}\n\nul.photo-gallery-list {\n  list-style-type: none;\n  padding: 0;\n}\n\nul.photo-gallery-list li {\n  display: inline;\n}\n\nul.photo-gallery-list > li {\n  margin-right: 10px;\n  height: 550px;\n}\n\n/* animation */\n.photo-gallery-load..photo-gallery-load-appear {\n    opacity: 0.0;\n }\n\n.photo-gallery-load.photo-gallery-load-appear-active {\n   opacity: 1;\n   transition: opacity 2s ease-in;\n}\n", ""]);
 
 	// exports
 
@@ -27242,9 +27242,9 @@
 	            _react2.default.createElement(
 	                "div",
 	                { className: "row" },
-	                _react2.default.createElement(_FeatureBox2.default, { name: "learning", items: this.state.learning, appearTimeout: "300" }),
-	                _react2.default.createElement(_FeatureBox2.default, { name: "doing", items: this.state.doing, appearTimeout: "600" }),
-	                _react2.default.createElement(_FeatureBox2.default, { name: "showing", items: this.state.showing, appearTimeout: "900" })
+	                _react2.default.createElement(_FeatureBox2.default, { name: "learning", items: this.state.learning, appearTimeout: 300 }),
+	                _react2.default.createElement(_FeatureBox2.default, { name: "doing", items: this.state.doing, appearTimeout: 600 }),
+	                _react2.default.createElement(_FeatureBox2.default, { name: "showing", items: this.state.showing, appearTimeout: 900 })
 	            ),
 	            _react2.default.createElement(
 	                "div",
