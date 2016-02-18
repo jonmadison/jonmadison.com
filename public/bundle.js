@@ -24096,7 +24096,7 @@
 	                _react2.default.createElement(
 	                    "div",
 	                    { className: "photos" },
-	                    _react2.default.createElement(_Gallery2.default, { photoCount: "500", tagName: "featured" })
+	                    _react2.default.createElement(_Gallery2.default, { photoCount: "100", tagName: "webfeatured" })
 	                )
 	            ),
 	            _react2.default.createElement(
@@ -24184,7 +24184,7 @@
 	        var _this = this;
 
 	        var query = {
-	            tags: ["webfeatured"],
+	            tags: this.props.tagName,
 	            results: this.props.photoCount
 	        };
 
@@ -27313,15 +27313,15 @@
 	                            transitionEnterTimeout: 2500,
 	                            transitionLeaveTimeout: 2500 },
 	                        _react2.default.createElement(
-	                            'p',
+	                            'div',
 	                            { className: 'status' },
-	                            this.props.statuses.data[Number.parseInt(this.props.index)].text
-	                        ),
-	                        _react2.default.createElement(
-	                            'p',
-	                            { className: 'status-date' },
-	                            'posted ',
-	                            this.props.statuses.data[Number.parseInt(this.props.index)].date
+	                            this.props.statuses.data[Number.parseInt(this.props.index)].text,
+	                            _react2.default.createElement(
+	                                'p',
+	                                { className: 'status-date' },
+	                                'posted ',
+	                                this.props.statuses.data[Number.parseInt(this.props.index)].date
+	                            )
 	                        )
 	                    )
 	                ),
@@ -27372,7 +27372,7 @@
 
 
 	// module
-	exports.push([module.id, "div.status-component {\n  z-index: 1;\n  font-size: 1.5em;\n}\n\np.status {\n  color: #fff;\n  font-size: 1.2em;\n  padding-top: 15px;\n  z-index: 2;\n}\n\np.status-date {\n  color: #fff;\n  font-size: 0.5em;\n  padding-top: 15px;\n  z-index: 2;\n}\n\n/* animation */\n.status.status-load-appear {\n    opacity: 0;\n}\n\n.status.status-load-appear-active {\n    opacity: 1;\n    transition: all 2.0s ease-in;\n}\n", ""]);
+	exports.push([module.id, "div.status-component {\n  z-index: 1;\n  font-size: 1.5em;\n}\n\ndiv.status {\n  color: #fff;\n  font-size: 1.2em;\n  padding-top: 10px;\n  z-index: 2;\n}\n\np.status-date {\n  color: #fff;\n  font-size: 0.5em;\n  padding-top: 5px;\n  z-index: 2;\n}\n\n/* animation */\n.status.status-load-appear {\n    opacity: 0;\n}\n\n.status.status-load-appear-active {\n    opacity: 1;\n    transition: all 2.0s ease-in;\n}\n", ""]);
 
 	// exports
 
