@@ -52,7 +52,7 @@ let Gallery = React.createClass({
     },
     componentDidMount: function() {
         let query = {
-            tags: this.props.tagName,
+            tags: [this.props.tagName],
             results: this.props.photoCount
         };
 
@@ -66,7 +66,7 @@ let Gallery = React.createClass({
                 this.setState(response);
             }
         })
-        .catch(function () {
+        .catch( () => {
             this.setState(fetchPlaceholders()["data"]);
         });
     },
