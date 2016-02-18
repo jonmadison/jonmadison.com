@@ -19,12 +19,12 @@ let Status = React.createClass({
                         transitionAppearTimeout={2500}
                         transitionEnterTimeout={2500}
                         transitionLeaveTimeout={2500}>
-                            <p className="status">
-                            {this.props.statuses.data[Number.parseInt(this.props.index)].text}
-                            </p>
-                            <p className="status-date">
-                            posted {this.props.statuses.data[Number.parseInt(this.props.index)].date}
-                            </p>
+                            <div className="status">
+                                {this.props.statuses.data[Number.parseInt(this.props.index)].text}
+                                <p className="status-date">
+                                posted {this.props.statuses.data[Number.parseInt(this.props.index)].date}
+                                </p>
+                            </div>
                         </ReactCSSTransitionGroup>
                     </div>
                     <div className="col-sm-1">

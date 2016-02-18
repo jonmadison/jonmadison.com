@@ -3,17 +3,17 @@ div.status-component {
   font-size: 1.5em;
 }
 
-p.status {
+div.status {
   color: #fff;
   font-size: 1.2em;
-  padding-top: 15px;
+  padding-top: 10px;
   z-index: 2;
 }
 
 p.status-date {
   color: #fff;
   font-size: 0.5em;
-  padding-top: 15px;
+  padding-top: 5px;
   z-index: 2;
 }
 
