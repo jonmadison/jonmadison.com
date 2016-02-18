@@ -27408,35 +27408,31 @@
 
 	    render: function render() {
 	        return _react2.default.createElement(
-	            'a',
-	            { href: './#/learning' },
+	            _reactAddonsCssTransitionGroup2.default,
+	            {
+	                transitionName: 'feature-box-load',
+	                transitionAppear: true,
+	                transitionAppearTimeout: this.props.appearTimeout || 300,
+	                transitionEnterTimeout: 300,
+	                transitionLeaveTimeout: 300 },
 	            _react2.default.createElement(
-	                _reactAddonsCssTransitionGroup2.default,
-	                {
-	                    transitionName: 'feature-box-load',
-	                    transitionAppear: true,
-	                    transitionAppearTimeout: this.props.appearTimeout || 300,
-	                    transitionEnterTimeout: 300,
-	                    transitionLeaveTimeout: 300 },
+	                'div',
+	                { key: (0, _lodash2.default)(), className: 'feature-box', id: this.props.name },
 	                _react2.default.createElement(
-	                    'div',
-	                    { key: (0, _lodash2.default)(), className: 'feature-box', id: this.props.name },
-	                    _react2.default.createElement(
-	                        'h1',
-	                        null,
-	                        this.props.name
-	                    ),
-	                    _react2.default.createElement(
-	                        'ul',
-	                        null,
-	                        this.props.items.map(function (item) {
-	                            return _react2.default.createElement(
-	                                'li',
-	                                { key: (0, _lodash2.default)() },
-	                                item
-	                            );
-	                        })
-	                    )
+	                    'h1',
+	                    null,
+	                    this.props.name
+	                ),
+	                _react2.default.createElement(
+	                    'ul',
+	                    null,
+	                    this.props.items.map(function (item) {
+	                        return _react2.default.createElement(
+	                            'li',
+	                            { key: (0, _lodash2.default)() },
+	                            item
+	                        );
+	                    })
 	                )
 	            )
 	        );
