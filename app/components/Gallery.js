@@ -52,7 +52,7 @@ let Gallery = React.createClass({
     },
     componentDidMount: function() {
         let query = {
-            tags: ["webfeatured"],
+            tags: this.props.tagName,
             results: this.props.photoCount
         };
 
@@ -74,10 +74,8 @@ let Gallery = React.createClass({
         return (
             <ReactCSSTransitionGroup
             transitionName="photo-gallery-load"
-            transitionAppear={true}
-            transitionAppearTimeout={2000}
-            transitionEnterTimeout={2000}
-            transitionLeaveTimeout={2000}>
+            transitionEnterTimeout={5000}
+            transitionLeaveTimeout={5000}>
                <div className="photo-gallery">
                     <ul className="photo-gallery-list">
                              {this.state.data.slice(0,this.props.photoCount).map(o => {
