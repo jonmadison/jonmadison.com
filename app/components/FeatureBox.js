@@ -2,6 +2,8 @@ import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import UniqueId from 'lodash.uniqueid';
 
+require("style!css!../../public/css/FeatureBox.css");
+
 let FeatureBox = React.createClass({
     render: function() {
         return (
@@ -9,9 +11,9 @@ let FeatureBox = React.createClass({
                     <ReactCSSTransitionGroup
                     transitionName="feature-box-load"
                     transitionAppear={true}
-                    transitionAppearTimeout={500}
-                    transitionEnterTimeout={500}
-                    transitionLeaveTimeout={500}>
+                    transitionAppearTimeout={this.props.appearTimeout || 300}
+                    transitionEnterTimeout={300}
+                    transitionLeaveTimeout={300}>
                         <div key={UniqueId()} className="feature-box" id={this.props.name}>
                             <h1>{this.props.name}</h1>
                             <ul>

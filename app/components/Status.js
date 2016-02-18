@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
+require("style!css!../../public/css/Status.css");
+
 let Status = React.createClass({
     render: function() {
         return (
@@ -14,9 +16,9 @@ let Status = React.createClass({
                         <ReactCSSTransitionGroup
                         transitionName="status-load"
                         transitionAppear={true}
-                        transitionAppearTimeout={10000}
-                        transitionEnterTimeout={100000}
-                        transitionLeaveTimeout={10000}>
+                        transitionAppearTimeout={2500}
+                        transitionEnterTimeout={2500}
+                        transitionLeaveTimeout={2500}>
                             <p className="status">
                             {this.props.statuses.data[Number.parseInt(this.props.index)].text}
                             </p>

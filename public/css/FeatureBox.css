@@ -1,0 +1,63 @@
+
+div.feature-box {
+  display: inline-block;
+  border-radius: 10px;
+  width: 350px;
+  height: 300px;
+  margin: 20px 20px 0px 20px;
+  padding: 15px 0 5px 0;
+  position: relative;
+  overflow: hidden;
+  font-size: 1.5em;
+  color: #FFF;
+  background-color:rgba(231, 142, 85, 0.15);
+  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .2), inset -1px -1px 1px rgba(0, 0, 0, .2);
+}
+
+div.feature-box h1 {
+  font-weight: 800;
+}
+
+div.feature-box::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.05;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+}
+
+div.feature-box ul {
+    padding: 30px;
+    text-align: left;
+    z-index: 2;
+    position: relative;
+}
+
+/*div.feature-box:hover {
+  opacity: 0.7;
+}*/
+
+@media screen and (max-width: 860px), screen and (max-height: 640px) {
+  div.feature-box {
+    width: 400px;
+  }
+}
+
+/* animation */
+.feature-box.feature-box-load-appear {
+    opacity: 0.2;
+    transform: scale(0.1);
+    transition: all 0.5s;
+}
+
+.feature-box.feature-box-load-appear-active {
+    opacity: 1;
+    transform: scale(1) ;
+}

@@ -48,7 +48,7 @@ let fetchPlaceholders = function() {
 };
 let Gallery = React.createClass({
     getInitialState: function() {
-        return {data: []};
+        return fetchPlaceholders();
     },
     componentDidMount: function() {
         let query = {
@@ -66,8 +66,7 @@ let Gallery = React.createClass({
                 this.setState(response);
             }
         })
-        .catch(function (response) {
-            console.log("got flickr response (catch)");
+        .catch(function () {
             this.setState(fetchPlaceholders()["data"]);
         });
     },

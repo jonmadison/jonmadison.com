@@ -1,7 +1,5 @@
 div.photos {
   height: 320px;
-  scroll-snap-points-x: repeat(420px);
-  scroll-snap-type: mandatory;
   white-space: nowrap;
   overflow-y: hidden;
   overflow-x: auto;

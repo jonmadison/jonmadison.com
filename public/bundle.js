@@ -62,9 +62,9 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	__webpack_require__(248);
-	__webpack_require__(250);
 	__webpack_require__(252);
+	__webpack_require__(254);
+
 	_reactDom2.default.render(_react2.default.createElement(
 	    _reactRouter.Router,
 	    null,
@@ -24178,7 +24178,7 @@
 	    displayName: "Gallery",
 
 	    getInitialState: function getInitialState() {
-	        return { data: [] };
+	        return fetchPlaceholders();
 	    },
 	    componentDidMount: function componentDidMount() {
 	        var _this = this;
@@ -24196,8 +24196,7 @@
 	            } else {
 	                _this.setState(response);
 	            }
-	        }).catch(function (response) {
-	            console.log("got flickr response (catch)");
+	        }).catch(function () {
 	            this.setState(fetchPlaceholders()["data"]);
 	        });
 	    },
@@ -26863,7 +26862,7 @@
 
 
 	// module
-	exports.push([module.id, "div.photos {\n  height: 320px;\n  scroll-snap-points-x: repeat(420px);\n  scroll-snap-type: mandatory;\n  white-space: nowrap;\n  overflow-y: hidden;\n  overflow-x: auto;\n}\n\nul.photo-list {\n  list-style-type: none;\n  padding: 0;\n}\n\nul.photo-list li {\n  display: inline;\n}\n\nul.photo-list > li {\n  opacity: 0.65;\n  transition: opacity 250ms;\n  margin-right: 10px;\n  height: 550px;\n}\n\nul.photo-list > li:hover {\n  opacity: 1.0;\n}\n\n.feature-box.gallery-load-appear {\n    opacity: 0.2;\n    transform: scale(0.1);\n    transition: all 0.15s ease-in-out 0.15s;\n}\n\n.feature-box.gallery-load-appear-active {\n    opacity: 1;\n    transform: scale(1) ;\n}\n", ""]);
+	exports.push([module.id, "div.photos {\n  height: 320px;\n  white-space: nowrap;\n  overflow-y: hidden;\n  overflow-x: auto;\n}\n\nul.photo-list {\n  list-style-type: none;\n  padding: 0;\n}\n\nul.photo-list li {\n  display: inline;\n}\n\nul.photo-list > li {\n  opacity: 0.65;\n  transition: opacity 250ms;\n  margin-right: 10px;\n  height: 550px;\n}\n\nul.photo-list > li:hover {\n  opacity: 1.0;\n}\n\n.feature-box.gallery-load-appear {\n    opacity: 0.2;\n    transform: scale(0.1);\n    transition: all 0.15s ease-in-out 0.15s;\n}\n\n.feature-box.gallery-load-appear-active {\n    opacity: 1;\n    transform: scale(1) ;\n}\n", ""]);
 
 	// exports
 
@@ -27196,11 +27195,11 @@
 
 	var _Status2 = _interopRequireDefault(_Status);
 
-	var _FeatureBox = __webpack_require__(246);
+	var _FeatureBox = __webpack_require__(248);
 
 	var _FeatureBox2 = _interopRequireDefault(_FeatureBox);
 
-	var _LinkButtons = __webpack_require__(247);
+	var _LinkButtons = __webpack_require__(251);
 
 	var _LinkButtons2 = _interopRequireDefault(_LinkButtons);
 
@@ -27243,9 +27242,9 @@
 	            _react2.default.createElement(
 	                "div",
 	                { className: "row" },
-	                _react2.default.createElement(_FeatureBox2.default, { name: "learning", items: this.state.learning }),
-	                _react2.default.createElement(_FeatureBox2.default, { name: "doing", items: this.state.doing }),
-	                _react2.default.createElement(_FeatureBox2.default, { name: "showing", items: this.state.showing })
+	                _react2.default.createElement(_FeatureBox2.default, { name: "learning", items: this.state.learning, appearTimeout: "300" }),
+	                _react2.default.createElement(_FeatureBox2.default, { name: "doing", items: this.state.doing, appearTimeout: "600" }),
+	                _react2.default.createElement(_FeatureBox2.default, { name: "showing", items: this.state.showing, appearTimeout: "900" })
 	            ),
 	            _react2.default.createElement(
 	                "div",
@@ -27287,6 +27286,8 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	__webpack_require__(246);
+
 	var Status = _react2.default.createClass({
 	    displayName: 'Status',
 
@@ -27310,9 +27311,9 @@
 	                        {
 	                            transitionName: 'status-load',
 	                            transitionAppear: true,
-	                            transitionAppearTimeout: 10000,
-	                            transitionEnterTimeout: 100000,
-	                            transitionLeaveTimeout: 10000 },
+	                            transitionAppearTimeout: 2500,
+	                            transitionEnterTimeout: 2500,
+	                            transitionLeaveTimeout: 2500 },
 	                        _react2.default.createElement(
 	                            'p',
 	                            { className: 'status' },
@@ -27342,6 +27343,46 @@
 /* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(247);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(243)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./Status.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./Status.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 247 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(242)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "div.status-component {\n  z-index: 1;\n  font-size: 1.5em;\n}\n\np.status {\n  color: #fff;\n  font-size: 1.2em;\n  padding-top: 15px;\n  z-index: 2;\n}\n\np.status-date {\n  color: #fff;\n  font-size: 0.5em;\n  padding-top: 15px;\n  z-index: 2;\n}\n\n/* animation */\n.status.status-load-appear {\n    opacity: 0;\n}\n\n.status.status-load-appear-active {\n    opacity: 1;\n    transition: all 2.0s ease-in;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 248 */
+/***/ function(module, exports, __webpack_require__) {
+
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -27362,6 +27403,8 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	__webpack_require__(249);
+
 	var FeatureBox = _react2.default.createClass({
 	    displayName: 'FeatureBox',
 
@@ -27374,9 +27417,9 @@
 	                {
 	                    transitionName: 'feature-box-load',
 	                    transitionAppear: true,
-	                    transitionAppearTimeout: 500,
-	                    transitionEnterTimeout: 500,
-	                    transitionLeaveTimeout: 500 },
+	                    transitionAppearTimeout: this.props.appearTimeout || 300,
+	                    transitionEnterTimeout: 300,
+	                    transitionLeaveTimeout: 300 },
 	                _react2.default.createElement(
 	                    'div',
 	                    { key: (0, _lodash2.default)(), className: 'feature-box', id: this.props.name },
@@ -27405,7 +27448,47 @@
 	exports.default = FeatureBox;
 
 /***/ },
-/* 247 */
+/* 249 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(250);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(243)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./FeatureBox.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./FeatureBox.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 250 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(242)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "\ndiv.feature-box {\n  display: inline-block;\n  border-radius: 10px;\n  width: 350px;\n  height: 300px;\n  margin: 20px 20px 0px 20px;\n  padding: 15px 0 5px 0;\n  position: relative;\n  overflow: hidden;\n  font-size: 1.5em;\n  color: #FFF;\n  background-color:rgba(231, 142, 85, 0.15);\n  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .2), inset -1px -1px 1px rgba(0, 0, 0, .2);\n}\n\ndiv.feature-box h1 {\n  font-weight: 800;\n}\n\ndiv.feature-box::before {\n    content: '';\n    display: block;\n    position: absolute;\n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%;\n    z-index: 1;\n    opacity: 0.05;\n    background-repeat: no-repeat;\n    background-position: 50% 0;\n    background-size: cover;\n}\n\ndiv.feature-box ul {\n    padding: 30px;\n    text-align: left;\n    z-index: 2;\n    position: relative;\n}\n\n/*div.feature-box:hover {\n  opacity: 0.7;\n}*/\n\n@media screen and (max-width: 860px), screen and (max-height: 640px) {\n  div.feature-box {\n    width: 400px;\n  }\n}\n\n/* animation */\n.feature-box.feature-box-load-appear {\n    opacity: 0.2;\n    transform: scale(0.1);\n    transition: all 0.5s;\n}\n\n.feature-box.feature-box-load-appear-active {\n    opacity: 1;\n    transform: scale(1) ;\n}", ""]);
+
+	// exports
+
+
+/***/ },
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27474,13 +27557,13 @@
 	exports.default = LinkButtons;
 
 /***/ },
-/* 248 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(249);
+	var content = __webpack_require__(253);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(243)(content, {});
@@ -27500,7 +27583,7 @@
 	}
 
 /***/ },
-/* 249 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(242)();
@@ -27514,13 +27597,13 @@
 
 
 /***/ },
-/* 250 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(251);
+	var content = __webpack_require__(255);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(243)(content, {});
@@ -27540,7 +27623,7 @@
 	}
 
 /***/ },
-/* 251 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(242)();
@@ -27548,47 +27631,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n  font-family: \"HelveticaNeue-Light\", \"Helvetica Neue Light\", sans-serif;\n  text-align: center;\n  background-image: url(\"/images/IMG_7700.JPG\");\n  background-size: 130% auto;\n  background-color: #F2C862;\n  color: #FFD90D;\n}\n\nbody, html {\n    overflow-x: hidden;\n}\n\n@media screen and (max-width: 860px), screen and (max-height: 640px) {\n  body {\n    text-align: center;\n    background-image: url(\"/images/20160108-IMG_7700.jpg\");\n    background-size: cover;\n  }\n\n  div.feature-box {\n    width: 400px;\n    /* height: 4000px; */\n  }\n}\n\ndiv.description {\n  font-size: 1.5em;\n  max-width: 800px;\n  margin: 20px auto 20px auto;\n}\n\ndiv.status-component {\n  z-index: 1;\n  font-size: 1.5em;\n}\n\np.status {\n  color: #fff;\n  font-size: 1.2em;\n  padding-top: 15px;\n  z-index: 2;\n}\n\np.status-date {\n  color: #fff;\n  font-size: 0.5em;\n  padding-top: 15px;\n  z-index: 2;\n}\n\ndiv.feature-box {\n  display: inline-block;\n  border-radius: 10px;\n  width: 350px;\n  height: 300px;\n  margin: 20px 20px 0px 20px;\n  padding: 15px 0 5px 0;\n  position: relative;\n  overflow: hidden;\n  font-size: 1.5em;\n  color: #FFF;\n  background-color:rgba(231, 142, 85, 0.15);\n  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .2), inset -1px -1px 1px rgba(0, 0, 0, .2);\n}\n\nh1 {\n  font-weight: 800;\n}\n\ndiv.feature-box::before {\n    content: '';\n    display: block;\n    position: absolute;\n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%;\n    z-index: 1;\n    opacity: 0.05;\n    background-repeat: no-repeat;\n    background-position: 50% 0;\n    background-size: cover;\n}\n\ndiv.feature-box ul {\n    padding: 30px;\n    text-align: left;\n    z-index: 2;\n    position: relative;\n}\n\n/*div.feature-box:hover {\n  opacity: 0.7;\n}*/\n\ndiv.link-buttons {\n  width: 100%;\n  margin-bottom: 20px;\n}\n\nul {\n  list-style-type: none;\n  padding: 0;\n  margin: 0;\n}\n\ndiv.link-buttons ul > li {\n  display: inline;\n  margin: 0 10px 0 10px;\n}\n\ndiv.link-buttons img {\n  max-width: 75px;\n}\n\n", ""]);
-
-	// exports
-
-
-/***/ },
-/* 252 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(253);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(243)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./animation.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./animation.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 253 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(242)();
-	// imports
-
-
-	// module
-	exports.push([module.id, ".status.status-load-appear {\n    opacity: 0;\n}\n\n.status.status-load-appear-active {\n    opacity: 1;\n    transition: all 1s ease-in;\n}\n\n.feature-box.feature-box-load-appear {\n    opacity: 0.2;\n    transform: scale(0.1);\n    transition: all 5s ease-in-out 0.5s;\n}\n\n.feature-box.feature-box-load-appear-active {\n    opacity: 1;\n    transform: scale(1) ;\n}", ""]);
+	exports.push([module.id, "body {\n  font-family: \"HelveticaNeue-Light\", \"Helvetica Neue Light\", sans-serif;\n  text-align: center;\n  background-image: url(\"/images/IMG_7700.JPG\");\n  background-size: 130% auto;\n  background-color: #F2C862;\n  color: #FFD90D;\n}\n\nbody, html {\n    overflow-x: hidden;\n}\n\n@media screen and (max-width: 860px), screen and (max-height: 640px) {\n  body {\n    text-align: center;\n    background-image: url(\"/images/20160108-IMG_7700.jpg\");\n    background-size: cover;\n  }\n}\n\ndiv.description {\n  font-size: 1.5em;\n  max-width: 800px;\n  margin: 20px auto 20px auto;\n}\n\ndiv.link-buttons {\n  width: 100%;\n  margin-bottom: 20px;\n}\n\nul {\n  list-style-type: none;\n  padding: 0;\n  margin: 0;\n}\n\ndiv.link-buttons ul > li {\n  display: inline;\n  margin: 0 10px 0 10px;\n}\n\ndiv.link-buttons img {\n  max-width: 75px;\n}\n\n", ""]);
 
 	// exports
 
