@@ -40,19 +40,13 @@ let Home = React.createClass({
     render: function() {
         return (
             <div className="container-fluid">
-                  <Status statuses={this.state.statuses} index="0" />
+                 <Status statuses={this.state.statuses} index="0" />
                 <div className="row center-block">
                     <FeatureBox name="learning" items={this.state.learning} appearTimeout={300}/>
                     <FeatureBox name="doing" items={this.state.doing} appearTimeout={600}/>
                     <FeatureBox name="showing" items={this.state.showing} appearTimeout={900} />
                 </div>
-                <div className="row description">
-                    <div className="center-block">
-                      jon madison is a full-stack technologist, continuous learner, picture taker,
-                      and sharer currently working in Seattle, Washington.
-                    </div>
-                </div>
-                <div className="row">
+                 <div className="row">
                     <LinkButtons/>
                 </div>
           </div>

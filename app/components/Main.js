@@ -27,11 +27,17 @@ let Main = React.createClass({
     },
     render: function() {
         return (
-          <div className="container-fluid">
-            <div className="row">
-              <div className="photos">
-                <Gallery photoCount="100" tagName="webfeatured" />
-              </div>
+            <div className="container-fluid">
+               <div className="row description">
+                    <div className="center-block">
+                      jon madison is a full-stack technologist, continuous learner, picture taker,
+                      and sharer currently working in Seattle, Washington.
+                    </div>
+                </div>
+              <div className="row">
+                <div className="photos">
+                    <Gallery photoCount="100" tagName="webfeatured" />
+                </div>
             </div>
             <div className="row">
                 {this.props.children}
