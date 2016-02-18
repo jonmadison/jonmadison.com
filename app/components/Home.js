@@ -46,7 +46,13 @@ let Home = React.createClass({
                     <FeatureBox name="doing" items={this.state.doing} appearTimeout={600}/>
                     <FeatureBox name="showing" items={this.state.showing} appearTimeout={900} />
                 </div>
-                 <div className="row">
+                <div className="row description">
+                    <div className="center-block">
+                      jon madison is a full-stack technologist, continuous learner, picture taker,
+                      and sharer currently working in Seattle, Washington.
+                    </div>
+                </div>
+                <div className="row">
                     <LinkButtons/>
                 </div>
           </div>

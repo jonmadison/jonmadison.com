@@ -24092,15 +24092,6 @@
 	            { className: "container-fluid" },
 	            _react2.default.createElement(
 	                "div",
-	                { className: "row description" },
-	                _react2.default.createElement(
-	                    "div",
-	                    { className: "center-block" },
-	                    "jon madison is a full-stack technologist, continuous learner, picture taker, and sharer currently working in Seattle, Washington."
-	                )
-	            ),
-	            _react2.default.createElement(
-	                "div",
 	                { className: "row" },
 	                _react2.default.createElement(
 	                    "div",
@@ -27252,6 +27243,15 @@
 	                _react2.default.createElement(_FeatureBox2.default, { name: "learning", items: this.state.learning, appearTimeout: 300 }),
 	                _react2.default.createElement(_FeatureBox2.default, { name: "doing", items: this.state.doing, appearTimeout: 600 }),
 	                _react2.default.createElement(_FeatureBox2.default, { name: "showing", items: this.state.showing, appearTimeout: 900 })
+	            ),
+	            _react2.default.createElement(
+	                "div",
+	                { className: "row description" },
+	                _react2.default.createElement(
+	                    "div",
+	                    { className: "center-block" },
+	                    "jon madison is a full-stack technologist, continuous learner, picture taker, and sharer currently working in Seattle, Washington."
+	                )
 	            ),
 	            _react2.default.createElement(
 	                "div",
