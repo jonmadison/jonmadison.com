@@ -46,7 +46,7 @@ div.feature-box ul {
 
 @media screen and (max-width: 860px), screen and (max-height: 640px) {
   div.feature-box {
-    width: 400px;
+    width: 300px;
   }
 }
 

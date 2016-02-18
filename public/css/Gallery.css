@@ -20,11 +20,11 @@ ul.photo-gallery-list > li {
 }
 
 /* animation */
-.photo-gallery-load..photo-gallery-load-appear {
-    opacity: 0.0;
+.photo-gallery-load..photo-gallery-load-enter {
+    opacity: 0.2;
  }
 
-.photo-gallery-load.photo-gallery-load-appear-active {
+.photo-gallery-load.photo-gallery-load-enter-active {
    opacity: 1;
-   transition: opacity 2s ease-in;
+   transition: opacity 3s ease-in;
 }

@@ -24205,10 +24205,8 @@
 	            _reactAddonsCssTransitionGroup2.default,
 	            {
 	                transitionName: "photo-gallery-load",
-	                transitionAppear: true,
-	                transitionAppearTimeout: 2000,
-	                transitionEnterTimeout: 2000,
-	                transitionLeaveTimeout: 2000 },
+	                transitionEnterTimeout: 5000,
+	                transitionLeaveTimeout: 5000 },
 	            _react2.default.createElement(
 	                "div",
 	                { className: "photo-gallery" },
@@ -26862,7 +26860,7 @@
 
 
 	// module
-	exports.push([module.id, "div.photo-gallery {\n  height: 320px;\n  white-space: nowrap;\n  overflow-y: hidden;\n  overflow-x: auto;\n}\n\nul.photo-gallery-list {\n  list-style-type: none;\n  padding: 0;\n}\n\nul.photo-gallery-list li {\n  display: inline;\n}\n\nul.photo-gallery-list > li {\n  margin-right: 10px;\n  height: 550px;\n}\n\n/* animation */\n.photo-gallery-load..photo-gallery-load-appear {\n    opacity: 0.0;\n }\n\n.photo-gallery-load.photo-gallery-load-appear-active {\n   opacity: 1;\n   transition: opacity 2s ease-in;\n}\n", ""]);
+	exports.push([module.id, "div.photo-gallery {\n  height: 320px;\n  white-space: nowrap;\n  overflow-y: hidden;\n  overflow-x: auto;\n}\n\nul.photo-gallery-list {\n  list-style-type: none;\n  padding: 0;\n}\n\nul.photo-gallery-list li {\n  display: inline;\n}\n\nul.photo-gallery-list > li {\n  margin-right: 10px;\n  height: 550px;\n}\n\n/* animation */\n.photo-gallery-load..photo-gallery-load-enter {\n    opacity: 0.2;\n }\n\n.photo-gallery-load.photo-gallery-load-enter-active {\n   opacity: 1;\n   transition: opacity 3s ease-in;\n}\n", ""]);
 
 	// exports
 
@@ -27241,7 +27239,7 @@
 	            _react2.default.createElement(_Status2.default, { statuses: this.state.statuses, index: "0" }),
 	            _react2.default.createElement(
 	                "div",
-	                { className: "row" },
+	                { className: "row center-block" },
 	                _react2.default.createElement(_FeatureBox2.default, { name: "learning", items: this.state.learning, appearTimeout: 300 }),
 	                _react2.default.createElement(_FeatureBox2.default, { name: "doing", items: this.state.doing, appearTimeout: 600 }),
 	                _react2.default.createElement(_FeatureBox2.default, { name: "showing", items: this.state.showing, appearTimeout: 900 })
@@ -27482,7 +27480,7 @@
 
 
 	// module
-	exports.push([module.id, "\ndiv.feature-box {\n  display: inline-block;\n  border-radius: 10px;\n  width: 350px;\n  height: 300px;\n  margin: 20px 20px 0px 20px;\n  padding: 15px 0 5px 0;\n  position: relative;\n  overflow: hidden;\n  font-size: 1.5em;\n  color: #FFF;\n  background-color:rgba(231, 142, 85, 0.15);\n  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .2), inset -1px -1px 1px rgba(0, 0, 0, .2);\n}\n\ndiv.feature-box h1 {\n  font-weight: 800;\n}\n\ndiv.feature-box::before {\n    content: '';\n    display: block;\n    position: absolute;\n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%;\n    z-index: 1;\n    opacity: 0.05;\n    background-repeat: no-repeat;\n    background-position: 50% 0;\n    background-size: cover;\n}\n\ndiv.feature-box ul {\n    padding: 30px;\n    text-align: left;\n    z-index: 2;\n    position: relative;\n}\n\n/*div.feature-box:hover {\n  opacity: 0.7;\n}*/\n\n@media screen and (max-width: 860px), screen and (max-height: 640px) {\n  div.feature-box {\n    width: 400px;\n  }\n}\n\n/* animation */\n.feature-box.feature-box-load-appear {\n    opacity: 0.2;\n    transform: scale(0.1);\n    transition: all 0.5s;\n}\n\n.feature-box.feature-box-load-appear-active {\n    opacity: 1;\n    transform: scale(1) ;\n}", ""]);
+	exports.push([module.id, "\ndiv.feature-box {\n  display: inline-block;\n  border-radius: 10px;\n  width: 350px;\n  height: 300px;\n  margin: 20px 20px 0px 20px;\n  padding: 15px 0 5px 0;\n  position: relative;\n  overflow: hidden;\n  font-size: 1.5em;\n  color: #FFF;\n  background-color:rgba(231, 142, 85, 0.15);\n  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .2), inset -1px -1px 1px rgba(0, 0, 0, .2);\n}\n\ndiv.feature-box h1 {\n  font-weight: 800;\n}\n\ndiv.feature-box::before {\n    content: '';\n    display: block;\n    position: absolute;\n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%;\n    z-index: 1;\n    opacity: 0.05;\n    background-repeat: no-repeat;\n    background-position: 50% 0;\n    background-size: cover;\n}\n\ndiv.feature-box ul {\n    padding: 30px;\n    text-align: left;\n    z-index: 2;\n    position: relative;\n}\n\n/*div.feature-box:hover {\n  opacity: 0.7;\n}*/\n\n@media screen and (max-width: 860px), screen and (max-height: 640px) {\n  div.feature-box {\n    width: 300px;\n  }\n}\n\n/* animation */\n.feature-box.feature-box-load-appear {\n    opacity: 0.2;\n    transform: scale(0.1);\n    transition: all 0.5s;\n}\n\n.feature-box.feature-box-load-appear-active {\n    opacity: 1;\n    transform: scale(1) ;\n}", ""]);
 
 	// exports
 
