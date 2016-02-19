@@ -24067,25 +24067,9 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	//todo: promisify
-	var fetchStatuses = function fetchStatuses() {
-	    return { data: [{
-	            text: "You QCon folks are amazing. Thanks for having me. Mad hearts ❤",
-	            date: "2016-01-31 20:22"
-	        }, {
-	            text: "i'll be speaking at QCon SF in a few weeks. ack",
-	            date: "2016-01-30 15:54"
-	        }, {
-	            text: "our team won an Intel Internet of Things hackathon yesterday in Seattle. #wearensemble",
-	            date: "2016-01-30 15:54"
-	        }] };
-	};
-
 	var Main = _react2.default.createClass({
 	    displayName: "Main",
 
-	    getInitialState: function getInitialState() {
-	        return fetchStatuses();
-	    },
 	    render: function render() {
 	        return _react2.default.createElement(
 	            "div",
@@ -27226,7 +27210,7 @@
 	        //services.
 	        var result = { statuses: fetchStatuses(),
 	            learning: ["React & Friends", "Swift 2.0", "Rx"],
-	            doing: ["iOS Development", "APIs", "TDD", "Inspiring ppl"],
+	            doing: ["iOS Development", "Web Dev", "APIs"],
 	            showing: ["Ppl how to node", "How to build Web APIs", "Empathy"]
 	        };
 	        return result;

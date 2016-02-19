@@ -30,7 +30,7 @@ let Home = React.createClass({
         //services.
         let result = { statuses: fetchStatuses(),
                  learning: ["React & Friends", "Swift 2.0", "Rx"],
-                 doing: ["iOS Development", "APIs", "TDD", "Inspiring ppl"],
+                 doing: ["iOS Development", "Web Dev", "APIs"],
                  showing: ["Ppl how to node", "How to build Web APIs", "Empathy"]
                 };
         return result;
