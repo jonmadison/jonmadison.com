@@ -26844,7 +26844,7 @@
 
 
 	// module
-	exports.push([module.id, "div.photo-gallery {\n  height: 320px;\n  white-space: nowrap;\n  overflow-y: hidden;\n  overflow-x: auto;\n}\n\nul.photo-gallery-list {\n  list-style-type: none;\n  padding: 0;\n}\n\nul.photo-gallery-list li {\n  display: inline;\n}\n\nul.photo-gallery-list > li {\n  margin-right: 10px;\n  height: 550px;\n}\n\n/* animation */\n.photo-gallery-load..photo-gallery-load-enter {\n    opacity: 0.2;\n }\n\n.photo-gallery-load.photo-gallery-load-enter-active {\n   opacity: 1;\n   transition: opacity 3s ease-in;\n}\n", ""]);
+	exports.push([module.id, "div.photo-gallery {\n  height: 320px;\n  white-space: nowrap;\n  overflow-y: hidden;\n  overflow-x: scroll;\n  -webkit-overflow-scrolling: touch;\n}\n\nul.photo-gallery-list {\n  list-style-type: none;\n  padding: 0;\n}\n\nul.photo-gallery-list li {\n  display: inline;\n}\n\nul.photo-gallery-list > li {\n  margin-right: 10px;\n  height: 550px;\n}\n\n/* animation */\n.photo-gallery-load..photo-gallery-load-enter {\n    opacity: 0.2;\n }\n\n.photo-gallery-load.photo-gallery-load-enter-active {\n   opacity: 1;\n   transition: opacity 3s ease-in;\n}\n", ""]);
 
 	// exports
 
