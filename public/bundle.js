@@ -64,7 +64,8 @@
 
 	__webpack_require__(252);
 	__webpack_require__(254);
-
+	__webpack_require__(256);
+	__webpack_require__(258);
 	_reactDom2.default.render(_react2.default.createElement(
 	    _reactRouter.Router,
 	    null,
@@ -24158,6 +24159,7 @@
 	            "altText": "six"
 	        }] };
 	};
+
 	var Gallery = _react2.default.createClass({
 	    displayName: "Gallery",
 
@@ -24186,17 +24188,19 @@
 	    },
 	    render: function render() {
 	        return _react2.default.createElement(
-	            _reactAddonsCssTransitionGroup2.default,
-	            {
-	                transitionName: "photo-gallery-load",
-	                transitionEnterTimeout: 5000,
-	                transitionLeaveTimeout: 5000 },
+	            "div",
+	            { className: "photo-gallery" },
 	            _react2.default.createElement(
-	                "div",
-	                { className: "photo-gallery" },
+	                "ul",
+	                { className: "photo-gallery-list" },
 	                _react2.default.createElement(
-	                    "ul",
-	                    { className: "photo-gallery-list" },
+	                    _reactAddonsCssTransitionGroup2.default,
+	                    {
+	                        transitionName: "photo-gallery-load",
+	                        transitionAppear: true,
+	                        transitionAppearTimeout: 1500,
+	                        transitionEnterTimeout: 500,
+	                        transitionLeaveTimeout: 500 },
 	                    this.state.data.slice(0, this.props.photoCount).map(function (o) {
 	                        return _react2.default.createElement(
 	                            "li",
@@ -26844,7 +26848,7 @@
 
 
 	// module
-	exports.push([module.id, "div.photo-gallery {\n  height: 320px;\n  white-space: nowrap;\n  overflow-y: hidden;\n  overflow-x: scroll;\n  -webkit-overflow-scrolling: touch;\n}\n\nul.photo-gallery-list {\n  list-style-type: none;\n  padding: 0;\n}\n\nul.photo-gallery-list li {\n  display: inline;\n}\n\nul.photo-gallery-list > li {\n  margin-right: 10px;\n  height: 550px;\n}\n\n/* animation */\n.photo-gallery-load..photo-gallery-load-enter {\n    opacity: 0.2;\n }\n\n.photo-gallery-load.photo-gallery-load-enter-active {\n   opacity: 1;\n   transition: opacity 3s ease-in;\n}\n", ""]);
+	exports.push([module.id, "div.photo-gallery {\n  height: 320px;\n  white-space: nowrap;\n  overflow-y: hidden;\n  overflow-x: scroll;\n  -webkit-overflow-scrolling: touch;\n}\n\nul.photo-gallery-list {\n  list-style-type: none;\n  padding: 0;\n}\n\nul.photo-gallery-list li {\n  display: inline;\n}\n\nul.photo-gallery-list > li {\n  margin-right: 10px;\n  height: 550px;\n}\n\n/* animation */\n.photo-gallery-load-appear {\n    opacity: 0.2;\n    transition: all 2.5s;\n}\n\n.photo-gallery-load-appear-active {\n    opacity: 1;\n}\n\n.photo-gallery-load-enter {\n    opacity: 0.2;\n    transition: all 2.5s;\n}\n\n.photo-gallery-load-enter-active {\n    opacity: 1;\n}", ""]);
 
 	// exports
 
@@ -27356,7 +27360,7 @@
 
 
 	// module
-	exports.push([module.id, "div.status-component {\n  z-index: 1;\n  font-size: 1.5em;\n}\n\ndiv.status {\n  color: #fff;\n  font-size: 1.2em;\n  padding-top: 10px;\n  z-index: 2;\n}\n\np.status-date {\n  color: #fff;\n  font-size: 0.5em;\n  padding-top: 5px;\n  text-align: right;\n  z-index: 2;\n}\n\n/* animation */\n.status.status-load-appear {\n    opacity: 0;\n}\n\n.status.status-load-appear-active {\n    opacity: 1;\n    transition: all 2.0s ease-in;\n}\n", ""]);
+	exports.push([module.id, "div.status-component {\n  z-index: 1;\n  font-size: 1.5em;\n}\n\ndiv.status {\n  color: #fff;\n  font-size: 1.2em;\n  padding-top: 10px;\n  z-index: 2;\n}\n\np.status-date {\n  color: #fff;\n  font-size: 0.5em;\n  padding-top: 5px;\n  text-align: right;\n  z-index: 2;\n}\n\n/* animation */\n.status-load-appear {\n    opacity: 0;\n}\n\n.status-load-appear-active {\n    opacity: 1;\n    transition: all 2.0s ease-in;\n}\n", ""]);
 
 	// exports
 
@@ -27460,7 +27464,7 @@
 
 
 	// module
-	exports.push([module.id, "\ndiv.feature-box {\n  display: inline-block;\n  border-radius: 10px;\n  width: 350px;\n  height: 300px;\n  margin: 20px 20px 0px 20px;\n  padding: 15px 0 5px 0;\n  position: relative;\n  overflow: hidden;\n  font-size: 1.5em;\n  color: #FFF;\n  background-color:rgba(231, 142, 85, 0.15);\n  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .2), inset -1px -1px 1px rgba(0, 0, 0, .2);\n}\n\ndiv.feature-box h1 {\n  font-weight: 800;\n}\n\ndiv.feature-box::before {\n    content: '';\n    display: block;\n    position: absolute;\n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%;\n    z-index: 1;\n    opacity: 0.05;\n    background-repeat: no-repeat;\n    background-position: 50% 0;\n    background-size: cover;\n}\n\ndiv.feature-box ul {\n    padding: 30px;\n    text-align: left;\n    z-index: 2;\n    position: relative;\n}\n\n/*div.feature-box:hover {\n  opacity: 0.7;\n}*/\n\n@media screen and (max-width: 860px), screen and (max-height: 640px) {\n  div.feature-box {\n    width: 300px;\n  }\n}\n\n/* animation */\n.feature-box.feature-box-load-appear {\n    opacity: 0.2;\n    transform: scale(0.1);\n    transition: all 0.5s;\n}\n\n.feature-box.feature-box-load-appear-active {\n    opacity: 1;\n    transform: scale(1) ;\n}", ""]);
+	exports.push([module.id, "\ndiv.feature-box {\n  display: inline-block;\n  border-radius: 10px;\n  width: 350px;\n  height: 300px;\n  margin: 20px 20px 0px 20px;\n  padding: 15px 0 5px 0;\n  position: relative;\n  overflow: hidden;\n  font-size: 1.5em;\n  color: #FFF;\n  background-color:rgba(231, 142, 85, 0.15);\n  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .2), inset -1px -1px 1px rgba(0, 0, 0, .2);\n}\n\ndiv.feature-box h1 {\n  font-weight: 800;\n}\n\ndiv.feature-box::before {\n    content: '';\n    display: block;\n    position: absolute;\n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%;\n    z-index: 1;\n    opacity: 0.05;\n    background-repeat: no-repeat;\n    background-position: 50% 0;\n    background-size: cover;\n}\n\ndiv.feature-box ul {\n    padding: 30px;\n    text-align: left;\n    z-index: 2;\n    position: relative;\n}\n\n/*div.feature-box:hover {\n  opacity: 0.7;\n}*/\n\n@media screen and (max-width: 860px), screen and (max-height: 640px) {\n  div.feature-box {\n    width: 300px;\n  }\n}\n\n/* animation */\n.feature-box-load-appear {\n    opacity: 0.2;\n    transform: scale(0.1);\n    transition: all 0.5s;\n}\n\n.feature-box-load-appear-active {\n    opacity: 1;\n    transform: scale(1) ;\n}", ""]);
 
 	// exports
 
@@ -27590,8 +27594,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./style.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./style.css");
+			module.hot.accept("!!./../css-loader/index.js!./react-spinner.css", function() {
+				var newContent = require("!!./../css-loader/index.js!./react-spinner.css");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -27609,10 +27613,56 @@
 
 
 	// module
+	exports.push([module.id, ".react-spinner {\n  position: relative;\n  width: 32px;\n  height: 32px;\n  top: 50%;\n  left: 50%;\n}\n\n.react-spinner_bar {\n  -webkit-animation: react-spinner_spin 1.2s linear infinite;\n  -moz-animation: react-spinner_spin 1.2s linear infinite;\n  animation: react-spinner_spin 1.2s linear infinite;\n  border-radius: 5px;\n  background-color: white;\n  position: absolute;\n  width: 20%;\n  height: 7.8%;\n  top: -3.9%;\n  left: -10%;\n}\n\n@keyframes react-spinner_spin {\n 0% { opacity: 1; }\n 100% { opacity: 0.15; }\n}\n\n@-moz-keyframes react-spinner_spin {\n 0% { opacity: 1; }\n 100% { opacity: 0.15; }\n}\n\n@-webkit-keyframes react-spinner_spin {\n 0% { opacity: 1; }\n 100% { opacity: 0.15; }\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 256 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(257);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(243)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./style.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./style.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 257 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(242)();
+	// imports
+
+
+	// module
 	exports.push([module.id, "body {\n  font-family: \"HelveticaNeue-Light\", \"Helvetica Neue Light\", sans-serif;\n  text-align: center;\n  background-image: url(\"/images/IMG_7700.JPG\");\n  background-size: 130% auto;\n  background-color: #F2C862;\n  color: #FFD90D;\n}\n\nbody, html {\n    overflow-x: hidden;\n}\n\n@media screen and (max-width: 860px), screen and (max-height: 640px) {\n  body {\n    text-align: center;\n    background-image: url(\"/images/20160108-IMG_7700.jpg\");\n    background-size: cover;\n  }\n}\n\ndiv.description {\n  font-size: 1.5em;\n  max-width: 800px;\n  margin: 20px auto 20px auto;\n}\n\ndiv.link-buttons {\n  width: 100%;\n  margin-bottom: 20px;\n}\n\nul {\n  list-style-type: none;\n  padding: 0;\n  margin: 0;\n}\n\ndiv.link-buttons ul > li {\n  display: inline;\n  margin: 0 10px 0 10px;\n}\n\ndiv.link-buttons img {\n  max-width: 75px;\n}\n\n", ""]);
 
 	// exports
 
+
+/***/ },
+/* 258 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "296309b92956d7ef4c1bf45fdc881d23.js";
 
 /***/ }
 /******/ ]);

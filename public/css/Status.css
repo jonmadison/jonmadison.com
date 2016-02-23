@@ -19,11 +19,11 @@ p.status-date {
 }
 
 /* animation */
-.status.status-load-appear {
+.status-load-appear {
     opacity: 0;
 }
 
-.status.status-load-appear-active {
+.status-load-appear-active {
     opacity: 1;
     transition: all 2.0s ease-in;
 }

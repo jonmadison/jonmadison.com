@@ -1,4 +1,5 @@
 "use strict";
+let logger = require("../config/logger");
 
 let co = require("co");
 let request = require("co-request");
@@ -10,6 +11,7 @@ const MAX_RESULTS_PER_PAGE = 100;
 
 let flickrIndex = {
     json: function getJson(req, res) {
+        console.log("flickrIndex...");
         let env = process.env.NODE_ENV || "development";
         let resultCount = req.query.results || MAX_RESULTS_PER_PAGE;
         let query = {
@@ -26,8 +28,8 @@ let flickrIndex = {
         co(function* () {
           // You can also pass options object, see http://github.com/mikeal/request docs
             let url = `https://${global.flickrEndpoint}?${qs.stringify(query)}`;
+            console.log(`flickr: ${url}`);
             let result = yield request(url);
-            let response = result;
             let body = JSON.parse(result.body);
             let photos = [];
 

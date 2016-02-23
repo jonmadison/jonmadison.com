@@ -2,6 +2,7 @@ import React from "react";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import Axios from "axios";
 import UniqueId from 'lodash.uniqueid';
+
 let qs = require("qs");
 
 require("style!css!../../public/css/Gallery.css");
@@ -46,6 +47,7 @@ let fetchPlaceholders = function() {
             }
         ]};
 };
+
 let Gallery = React.createClass({
     getInitialState: function() {
         return {data: []};
@@ -72,20 +74,22 @@ let Gallery = React.createClass({
     },
     render: function() {
         return (
-            <ReactCSSTransitionGroup
-            transitionName="photo-gallery-load"
-            transitionEnterTimeout={5000}
-            transitionLeaveTimeout={5000}>
-               <div className="photo-gallery">
+                <div className="photo-gallery">
                     <ul className="photo-gallery-list">
-                             {this.state.data.slice(0,this.props.photoCount).map(o => {
-                                return (
-                                        <li key={o.id}><img src={o.imageName} height="320"/></li>
-                                );
-                            })}
-                     </ul>
+                        <ReactCSSTransitionGroup
+                        transitionName="photo-gallery-load"
+                        transitionAppear={true}
+                        transitionAppearTimeout={1500}
+                        transitionEnterTimeout={500}
+                        transitionLeaveTimeout={500}>
+                        {this.state.data.slice(0,this.props.photoCount).map(o => {
+                            return (
+                                    <li key={o.id}><img src={o.imageName} height="320"/></li>
+                            );
+                        })}
+                        </ReactCSSTransitionGroup>
+                 </ul>
                 </div>
-            </ReactCSSTransitionGroup>
         );
     }
 });

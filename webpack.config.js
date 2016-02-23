@@ -1,4 +1,5 @@
 "use strict";
+let webpack = require("webpack");
 let path = require("path");
 
 module.exports = {
@@ -27,5 +28,12 @@ module.exports = {
                 loader: "file-loader?name=[path][name].[ext]"
             }
         ]
-    }
+    },
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery"
+        })
+    ]
 };

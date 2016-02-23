@@ -51,13 +51,13 @@ div.feature-box ul {
 }
 
 /* animation */
-.feature-box.feature-box-load-appear {
+.feature-box-load-appear {
     opacity: 0.2;
     transform: scale(0.1);
     transition: all 0.5s;
 }
 
-.feature-box.feature-box-load-appear-active {
+.feature-box-load-appear-active {
     opacity: 1;
     transform: scale(1) ;
 }
