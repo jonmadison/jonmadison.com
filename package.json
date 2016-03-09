@@ -26,6 +26,7 @@
     "lodash.uniqueid": "^3.2.0",
     "morgan": "^1.6.1",
     "npm": "^3.7.2",
+    "pg": "^4.5.1",
     "qs": "^6.1.0",
     "react": "^0.14.7",
     "react-addons-css-transition-group": "^0.14.7",

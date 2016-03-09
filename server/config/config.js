@@ -1,4 +1,5 @@
 "use strict";
+let database_url = process.env.DATABASE_URL || 'postgres://localhost:5432/jon';
 
 let config = {
     apiVersion: 1,
@@ -8,6 +9,7 @@ let config = {
     flickrUserId: process.env.FLICKR_USER_ID,
     flickrEndpoint: "api.flickr.com/services/rest/",
     apiPrefix: "/api",
+    databaseUrl: database_url,
     development: {
         port: 5008,
         app: {
