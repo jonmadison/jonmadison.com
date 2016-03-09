@@ -2,6 +2,7 @@ import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Axios from "axios";
 import UniqueId from 'lodash.uniqueid';
+import Moment from 'moment';
 
 require("style!css!../../public/css/Status.css");
 
@@ -10,15 +11,15 @@ let fetchPlaceholders = function() {
         data: [
             {
                 message: "You QCon folks are amazing. Thanks for having me. Mad hearts ❤",
-                created_at: "2016-01-31 20:22"
+                created_at: "2016-03-09T05:02:41.420Z"
             },
             {
                 message: "i'll be speaking at QCon SF in a few weeks. ack",
-                created_at: "2016-01-30 15:54"
+                created_at: "2016-03-09T05:02:41.420Z"
             },
             {
                 message: "our team won an Intel Internet of Things hackathon yesterday in Seattle. #wearensemble",
-                created_at: "2016-01-30 15:54"
+                created_at: "2016-03-09T05:02:41.420Z"
             }
         ]
     };
@@ -49,6 +50,9 @@ let Status = React.createClass({
             });
     },
     render: function() {
+        let message = this.state.data[Number.parseInt(this.props.index)].message;
+        let createdAt = new Date(this.state.data[Number.parseInt(this.props.index)].created_at);
+        let createAtHuman = Moment(createdAt).fromNow();
         return (
             <div id="status-component">
                 <div className="row status-component">
@@ -64,9 +68,9 @@ let Status = React.createClass({
                         transitionEnterTimeout={2500}
                         transitionLeaveTimeout={2500}>
                             <div className="status">
-                                {this.state.data[Number.parseInt(this.props.index)].message}
+                                {message}
                                 <p className="status-date">
-                                posted {this.state.data[Number.parseInt(this.props.index)].created_at}
+                                posted {createAtHuman}
                                 </p>
                             </div>
                         </ReactCSSTransitionGroup>
