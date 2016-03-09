@@ -7,7 +7,7 @@ let app = require("../jonmadison.com");
 let request = require("supertest");
 let qs = require("qs");
 
-describe("data server -- flickr", function() {
+describe("data server -- general", function() {
     it("returns 404 on unknown route", function(done) {
         request(app)
             .get("/api/blahblah")
@@ -16,7 +16,20 @@ describe("data server -- flickr", function() {
                 done();
             });
     });
+});
 
+describe("data server -- posts", function() {
+    it("returns a list of posts from the repo", function(done) {
+        request(app)
+            .get("/api/posts")
+            .end(function(err, res) {
+                res.status.must.equal(200);
+                done();
+            });
+    });
+});
+
+describe("data server -- flickr", function() {
     it("returns a list of photos based on user and tag", function(done) {
         let query = {
             tags: ["webfeatured"],
@@ -27,10 +40,9 @@ describe("data server -- flickr", function() {
             .get(`/api/flickr/photos/smartbrother/?${qs.stringify(query)}`)
             .end(function(err, res) {
                 res.status.must.equal(200);
-                res.body.must.have.keys(["data"]);
-                res.body.data.length.must.equal(5);
-                res.body.data[0].must.have.keys(["id","imageName","altText","tags"]);
-                res.body.data[0].tags.must.include("webfeatured");
+                res.body.length.must.equal(5);
+                res.body[0].must.have.keys(["id","imageName","altText","tags"]);
+                res.body[0].tags.must.include("webfeatured");
                 done();
             });
     });
@@ -44,9 +56,8 @@ describe("data server -- flickr", function() {
             .get(`/api/flickr/photos/smartbrother/?${qs.stringify(query)}`)
             .end(function(err, res) {
                 res.status.must.equal(200);
-                res.body.must.have.keys(["data"]);
-                res.body.data.length.must.equal(10);
-                res.body.data[0].must.have.keys(["id","imageName","altText","tags"]);
+                res.body.length.must.equal(10);
+                res.body[0].must.have.keys(["id","imageName","altText","tags"]);
                 done();
             });
     });
@@ -56,9 +67,8 @@ describe("data server -- flickr", function() {
             .get(`/api/flickr/photos/smartbrother`)
             .end(function(err, res) {
                 res.status.must.equal(200);
-                res.body.must.have.keys(["data"]);
-                res.body.data.length.must.equal(100);
-                res.body.data[0].must.have.keys(["id","imageName","altText","tags"]);
+                res.body.length.must.equal(100);
+                res.body[0].must.have.keys(["id","imageName","altText","tags"]);
                 done();
             });
     });
