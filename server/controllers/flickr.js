@@ -28,7 +28,7 @@ let flickrIndex = {
         co(function* () {
           // You can also pass options object, see http://github.com/mikeal/request docs
             let url = `https://${global.flickrEndpoint}?${qs.stringify(query)}`;
-            console.log(`flickr: ${url}`);
+            // console.log(`flickr: ${url}`);
             let result = yield request(url);
             let body = JSON.parse(result.body);
             let photos = [];

@@ -27190,19 +27190,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var fetchStatuses = function fetchStatuses() {
-	    return { data: [{
-	            text: "You QCon folks are amazing. Thanks for having me. Mad hearts ❤",
-	            date: "2016-01-31 20:22"
-	        }, {
-	            text: "i'll be speaking at QCon SF in a few weeks. ack",
-	            date: "2016-01-30 15:54"
-	        }, {
-	            text: "our team won an Intel Internet of Things hackathon yesterday in Seattle. #wearensemble",
-	            date: "2016-01-30 15:54"
-	        }] };
-	};
-
 	var Home = _react2.default.createClass({
 	    displayName: "Home",
 
@@ -27211,7 +27198,7 @@
 	        //Orchestrate data fetching of local sources.
 	        //Gallery component is responsible for its own fetching from outside
 	        //services.
-	        var result = { statuses: fetchStatuses(),
+	        var result = {
 	            learning: ["React & Friends", "Swift 2.0", "Rx"],
 	            doing: ["iOS Development", "Web Dev", "APIs"],
 	            showing: ["Ppl how to node", "How to build Web APIs", "Empathy"]
@@ -27223,7 +27210,7 @@
 	        return _react2.default.createElement(
 	            "div",
 	            { className: "container-fluid" },
-	            _react2.default.createElement(_Status2.default, { statuses: this.state.statuses, index: "0" }),
+	            _react2.default.createElement(_Status2.default, { index: "0" }),
 	            _react2.default.createElement(
 	                "div",
 	                { className: "row center-block" },
@@ -27269,13 +27256,59 @@
 
 	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
 
+	var _axios = __webpack_require__(216);
+
+	var _axios2 = _interopRequireDefault(_axios);
+
+	var _lodash = __webpack_require__(233);
+
+	var _lodash2 = _interopRequireDefault(_lodash);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	__webpack_require__(246);
 
+	var fetchPlaceholders = function fetchPlaceholders() {
+	    return {
+	        data: [{
+	            message: "You QCon folks are amazing. Thanks for having me. Mad hearts ❤",
+	            created_at: "2016-01-31 20:22"
+	        }, {
+	            message: "i'll be speaking at QCon SF in a few weeks. ack",
+	            created_at: "2016-01-30 15:54"
+	        }, {
+	            message: "our team won an Intel Internet of Things hackathon yesterday in Seattle. #wearensemble",
+	            created_at: "2016-01-30 15:54"
+	        }]
+	    };
+	};
+
 	var Status = _react2.default.createClass({
 	    displayName: 'Status',
 
+	    getInitialState: function getInitialState() {
+	        return {
+	            data: [{
+	                message: "loading...",
+	                created_at: ""
+	            }]
+	        };
+	    },
+	    componentDidMount: function componentDidMount() {
+	        var _this = this;
+
+	        var url = '/api/statuses';
+
+	        _axios2.default.get(url).then(function (response) {
+	            if (response.status !== 200) {
+	                _this.setState(fetchPlaceholders());
+	            } else {
+	                _this.setState(response);
+	            }
+	        }).catch(function () {
+	            _this.setState(fetchPlaceholders());
+	        });
+	    },
 	    render: function render() {
 	        return _react2.default.createElement(
 	            'div',
@@ -27302,12 +27335,12 @@
 	                        _react2.default.createElement(
 	                            'div',
 	                            { className: 'status' },
-	                            this.props.statuses.data[Number.parseInt(this.props.index)].text,
+	                            this.state.data[Number.parseInt(this.props.index)].message,
 	                            _react2.default.createElement(
 	                                'p',
 	                                { className: 'status-date' },
 	                                'posted ',
-	                                this.props.statuses.data[Number.parseInt(this.props.index)].date
+	                                this.state.data[Number.parseInt(this.props.index)].created_at
 	                            )
 	                        )
 	                    )

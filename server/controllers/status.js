@@ -15,13 +15,13 @@ exports.index = {
 
       var query = client.query('SELECT * from posts order by created_at DESC limit ' + MAX_RESULTS);
       query.on('row', function(row) {
+        console.log(row);
         statuses.push(row);
       });
 
       query.on('end',function(){
         done(); //release to pool
-        var results = { data: statuses };
-        return res.status(200).json(results);
+        return res.status(200).json(statuses);
       })
     })
   }
