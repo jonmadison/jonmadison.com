@@ -67,7 +67,7 @@
 
 	_reactDom2.default.render(_react2.default.createElement(
 	    _reactRouter.Router,
-	    null,
+	    { location: "history" },
 	    _routes2.default
 	), document.getElementById("app"));
 
@@ -27315,8 +27315,10 @@
 	    },
 	    render: function render() {
 	        var message = this.state.data[Number.parseInt(this.props.index)].message;
-	        var createdAt = new Date(this.state.data[Number.parseInt(this.props.index)].created_at);
-	        var createAtHuman = (0, _moment2.default)(createdAt).fromNow();
+
+	        var createdAt = this.state.data[Number.parseInt(this.props.index)].created_at;
+	        var createdAtDate = createdAt === "" ? "" : new Date(createdAt);
+	        var createAtHuman = createdAtDate === "" ? "" : (0, _moment2.default)(createdAt).fromNow();
 	        return _react2.default.createElement(
 	            'div',
 	            { id: 'status-component' },

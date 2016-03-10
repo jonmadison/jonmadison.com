@@ -6,6 +6,6 @@ require("style!css!../node_modules/bootstrap/dist/css/bootstrap.min.css");
 require("style!css!../public/css/style.css");
 
 ReactDOM.render(
-    <Router>{routes}</Router>,
+    <Router location="history">{routes}</Router>,
     document.getElementById("app")
 );

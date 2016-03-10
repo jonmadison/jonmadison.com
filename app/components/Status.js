@@ -51,8 +51,10 @@ let Status = React.createClass({
     },
     render: function() {
         let message = this.state.data[Number.parseInt(this.props.index)].message;
-        let createdAt = new Date(this.state.data[Number.parseInt(this.props.index)].created_at);
-        let createAtHuman = Moment(createdAt).fromNow();
+
+        let createdAt = this.state.data[Number.parseInt(this.props.index)].created_at;
+        let createdAtDate = createdAt === "" ? "" : new Date(createdAt);
+        let createAtHuman = createdAtDate === "" ? "" : Moment(createdAt).fromNow();
         return (
             <div id="status-component">
                 <div className="row status-component">
