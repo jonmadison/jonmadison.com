@@ -40657,7 +40657,7 @@
 	                    null,
 	                    _react2.default.createElement(
 	                        "a",
-	                        { href: "https://www.linkedin.com/in/" },
+	                        { href: "https://www.linkedin.com/in/jonmadison" },
 	                        _react2.default.createElement("img", { src: "images/logos/In-White-101px-R.png", alt: "LinkedIn" })
 	                    )
 	                ),
