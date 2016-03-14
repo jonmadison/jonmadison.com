@@ -40656,7 +40656,7 @@
 	                    _react2.default.createElement(
 	                        "a",
 	                        { href: "http://jonmadison.bandcamp.com/music" },
-	                        _react2.default.createElement("img", { src: "images/logos/bclogowhite.png", alt: "bandcamp" })
+	                        _react2.default.createElement("img", { src: "images/logos/bc-logotype-light-128.png", alt: "bandcamp" })
 	                    )
 	                )
 	            )

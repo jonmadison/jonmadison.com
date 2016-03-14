@@ -15,7 +15,7 @@ let LinkButtons = React.createClass({
                         <a href="https://www.linkedin.com/in/"><img src="images/logos/In-White-101px-R.png" alt="LinkedIn"/></a>
                     </li>
                     <li>
-                        <a href="http://jonmadison.bandcamp.com/music"><img src="images/logos/bclogowhite.png" alt="bandcamp"/></a>
+                        <a href="http://jonmadison.bandcamp.com/music"><img src="images/logos/bc-logotype-light-128.png" alt="bandcamp"/></a>
                     </li>
                 </ul>
             </div>
