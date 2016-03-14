@@ -1,4 +1,4 @@
-div.status-component {
+div#status-component {
   z-index: 1;
   font-size: 1.5em;
 }

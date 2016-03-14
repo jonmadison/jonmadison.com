@@ -57,7 +57,7 @@ let Status = React.createClass({
         let createAtHuman = createdAtDate === "" ? "" : Moment(createdAt).fromNow();
         return (
             <div id="status-component">
-                <div className="row status-component">
+                <div className="row">
                     <div className="col-sm-1">
                         <a href="">
                         </a>

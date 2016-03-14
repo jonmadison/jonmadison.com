@@ -27335,7 +27335,7 @@
 	            { id: 'status-component' },
 	            _react2.default.createElement(
 	                'div',
-	                { className: 'row status-component' },
+	                { className: 'row' },
 	                _react2.default.createElement(
 	                    'div',
 	                    { className: 'col-sm-1' },
@@ -40499,7 +40499,7 @@
 
 
 	// module
-	exports.push([module.id, "div.status-component {\n  z-index: 1;\n  font-size: 1.5em;\n}\n\ndiv.status {\n  color: #fff;\n  font-size: 1.1em;\n  padding-top: 10px;\n  z-index: 2;\n}\n\np.status-date {\n  color: #fff;\n  font-size: 0.5em;\n  padding-top: 5px;\n  text-align: right;\n  z-index: 2;\n}\n\n/* animation */\n.status-load-appear {\n    opacity: 0;\n}\n\n.status-load-appear-active {\n    opacity: 1;\n    transition: all 2.0s ease-in;\n}\n", ""]);
+	exports.push([module.id, "div#status-component {\n  z-index: 1;\n  font-size: 1.5em;\n}\n\ndiv.status {\n  color: #fff;\n  font-size: 1.1em;\n  padding-top: 10px;\n  z-index: 2;\n}\n\np.status-date {\n  color: #fff;\n  font-size: 0.5em;\n  padding-top: 5px;\n  text-align: right;\n  z-index: 2;\n}\n\n/* animation */\n.status-load-appear {\n    opacity: 0;\n}\n\n.status-load-appear-active {\n    opacity: 1;\n    transition: all 2.0s ease-in;\n}\n", ""]);
 
 	// exports
 
