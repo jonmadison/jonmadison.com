@@ -45,9 +45,11 @@ let flickrIndex = {
 
             let flickrPhotos = photos.map((p) => {
                 let photoUrl = `https://farm${p.farm}.staticflickr.com/${p.server}/${p.id}_${p.secret}.jpg`;
+                let flickrPageUrl = `https://www.flickr.com/photos/${process.env.FLICKR_USERNAME}/${p.id}`;
                 let result = {
                     id: p.id,
                     imageName: photoUrl,
+                    url: flickrPageUrl,
                     altText: p.title,
                     tags: p.tags
                 };

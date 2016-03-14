@@ -13,37 +13,44 @@ let fetchPlaceholders = function() {
             {
                 "id": 0,
                 "imageName": "/images/0.jpg",
-                "altText": "zero"
+                "altText": "zero",
+                "url": "http://www.flickr.com"
             },
             {
                 "id": 1,
                 "imageName": "/images/1.jpg",
-                "altText": "one"
+                "altText": "one",
+                "url": "http://www.flickr.com"
             },
             {
                 "id": 2,
                 "imageName": "/images/2.jpg",
-                "altText": "two"
+                "altText": "two",
+                "url": "http://www.flickr.com"
             },
             {
                 "id": 3,
                 "imageName": "/images/3.jpg",
-                "altText": "three"
+                "altText": "three",
+                "url": "http://www.flickr.com"
             },
             {
                 "id": 4,
                 "imageName": "/images/4.jpg",
-                "altText": "four"
+                "altText": "four",
+                "url": "http://www.flickr.com"
             },
             {
                 "id": 5,
                 "imageName": "/images/5.jpg",
-                "altText": "five"
+                "altText": "five",
+                "url": "http://www.flickr.com"
             },
             {
                 "id": 6,
                 "imageName": "/images/6.jpg",
-                "altText": "six"
+                "altText": "six",
+                "url": "http://www.flickr.com"
             }
         ]};
 };
@@ -84,7 +91,7 @@ let Gallery = React.createClass({
                         transitionLeaveTimeout={500}>
                         {this.state.data.slice(0,this.props.photoCount).map(o => {
                             return (
-                                    <li key={o.id}><img src={o.imageName} height="320"/></li>
+                                    <li key={o.id}><a href={o.url} target="_blank"><img src={o.imageName} height="320"/></a></li>
                             );
                         })}
                         </ReactCSSTransitionGroup>

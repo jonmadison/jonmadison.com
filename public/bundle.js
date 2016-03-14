@@ -24131,31 +24131,38 @@
 	        data: [{
 	            "id": 0,
 	            "imageName": "/images/0.jpg",
-	            "altText": "zero"
+	            "altText": "zero",
+	            "url": "http://www.flickr.com"
 	        }, {
 	            "id": 1,
 	            "imageName": "/images/1.jpg",
-	            "altText": "one"
+	            "altText": "one",
+	            "url": "http://www.flickr.com"
 	        }, {
 	            "id": 2,
 	            "imageName": "/images/2.jpg",
-	            "altText": "two"
+	            "altText": "two",
+	            "url": "http://www.flickr.com"
 	        }, {
 	            "id": 3,
 	            "imageName": "/images/3.jpg",
-	            "altText": "three"
+	            "altText": "three",
+	            "url": "http://www.flickr.com"
 	        }, {
 	            "id": 4,
 	            "imageName": "/images/4.jpg",
-	            "altText": "four"
+	            "altText": "four",
+	            "url": "http://www.flickr.com"
 	        }, {
 	            "id": 5,
 	            "imageName": "/images/5.jpg",
-	            "altText": "five"
+	            "altText": "five",
+	            "url": "http://www.flickr.com"
 	        }, {
 	            "id": 6,
 	            "imageName": "/images/6.jpg",
-	            "altText": "six"
+	            "altText": "six",
+	            "url": "http://www.flickr.com"
 	        }] };
 	};
 
@@ -24204,7 +24211,11 @@
 	                        return _react2.default.createElement(
 	                            "li",
 	                            { key: o.id },
-	                            _react2.default.createElement("img", { src: o.imageName, height: "320" })
+	                            _react2.default.createElement(
+	                                "a",
+	                                { href: o.url, target: "_blank" },
+	                                _react2.default.createElement("img", { src: o.imageName, height: "320" })
+	                            )
 	                        );
 	                    })
 	                )
