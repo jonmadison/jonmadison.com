@@ -13,10 +13,10 @@ ul.photo-gallery-list {
 
 ul.photo-gallery-list li {
   display: inline;
+  margin-right: 5px;
 }
 
 ul.photo-gallery-list > li {
-  margin-right: 10px;
   height: 550px;
 }
 

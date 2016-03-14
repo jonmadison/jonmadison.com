@@ -26858,7 +26858,7 @@
 
 
 	// module
-	exports.push([module.id, "div.photo-gallery {\n  height: 320px;\n  white-space: nowrap;\n  overflow-y: hidden;\n  overflow-x: scroll;\n  -webkit-overflow-scrolling: touch;\n}\n\nul.photo-gallery-list {\n  list-style-type: none;\n  padding: 0;\n}\n\nul.photo-gallery-list li {\n  display: inline;\n}\n\nul.photo-gallery-list > li {\n  margin-right: 10px;\n  height: 550px;\n}\n\n/* animation */\n.photo-gallery-load-appear {\n    opacity: 0.2;\n    transition: all 2.5s;\n}\n\n.photo-gallery-load-appear-active {\n    opacity: 1;\n}\n\n.photo-gallery-load-enter {\n    opacity: 0.2;\n    transition: all 0.25s ease-in;\n}\n\n.photo-gallery-load-enter-active {\n    opacity: 1;\n}", ""]);
+	exports.push([module.id, "div.photo-gallery {\n  height: 320px;\n  white-space: nowrap;\n  overflow-y: hidden;\n  overflow-x: scroll;\n  -webkit-overflow-scrolling: touch;\n}\n\nul.photo-gallery-list {\n  list-style-type: none;\n  padding: 0;\n}\n\nul.photo-gallery-list li {\n  display: inline;\n  margin-right: 5px;\n}\n\nul.photo-gallery-list > li {\n  height: 550px;\n}\n\n/* animation */\n.photo-gallery-load-appear {\n    opacity: 0.2;\n    transition: all 2.5s;\n}\n\n.photo-gallery-load-appear-active {\n    opacity: 1;\n}\n\n.photo-gallery-load-enter {\n    opacity: 0.2;\n    transition: all 0.25s ease-in;\n}\n\n.photo-gallery-load-enter-active {\n    opacity: 1;\n}", ""]);
 
 	// exports
 
@@ -40499,7 +40499,7 @@
 
 
 	// module
-	exports.push([module.id, "div.status-component {\n  z-index: 1;\n  font-size: 1.5em;\n}\n\ndiv.status {\n  color: #fff;\n  font-size: 1.2em;\n  padding-top: 10px;\n  z-index: 2;\n}\n\np.status-date {\n  color: #fff;\n  font-size: 0.5em;\n  padding-top: 5px;\n  text-align: right;\n  z-index: 2;\n}\n\n/* animation */\n.status-load-appear {\n    opacity: 0;\n}\n\n.status-load-appear-active {\n    opacity: 1;\n    transition: all 2.0s ease-in;\n}\n", ""]);
+	exports.push([module.id, "div.status-component {\n  z-index: 1;\n  font-size: 1.5em;\n}\n\ndiv.status {\n  color: #fff;\n  font-size: 1.1em;\n  padding-top: 10px;\n  z-index: 2;\n}\n\np.status-date {\n  color: #fff;\n  font-size: 0.5em;\n  padding-top: 5px;\n  text-align: right;\n  z-index: 2;\n}\n\n/* animation */\n.status-load-appear {\n    opacity: 0;\n}\n\n.status-load-appear-active {\n    opacity: 1;\n    transition: all 2.0s ease-in;\n}\n", ""]);
 
 	// exports
 
