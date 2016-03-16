@@ -7,12 +7,10 @@ let global = require("../config/config");
 let qs = require('qs');
 let _ = require("lodash");
 
-const MAX_RESULTS_PER_PAGE = global.flickrResultsPerPage;
-
 let flickrIndex = {
     json: function getJson(req, res) {
-        logger.debug(`flickr index, showing ${MAX_RESULTS_PER_PAGE} results per page`);
-        let resultCount = req.query.results || MAX_RESULTS_PER_PAGE;
+        logger.debug(`flickr index, showing ${global.flickrResultsPerPage} results per page`);
+        let resultCount = req.query.results || global.flickrResultsPerPage;
         let query = {
             method: "flickr.people.getPublicPhotos",
             api_key: global.flickrApiKey,
