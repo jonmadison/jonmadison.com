@@ -11,7 +11,6 @@ const MAX_RESULTS_PER_PAGE = 100;
 
 let flickrIndex = {
     json: function getJson(req, res) {
-        console.log("flickrIndex...");
         let env = process.env.NODE_ENV || "development";
         let resultCount = req.query.results || MAX_RESULTS_PER_PAGE;
         let query = {
