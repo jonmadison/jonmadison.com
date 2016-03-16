@@ -1,17 +1,17 @@
 "use strict";
-let logger = require("../config/logger");
 
+let logger = require("../config/logger");
 let co = require("co");
 let request = require("co-request");
 let global = require("../config/config");
 let qs = require('qs');
 let _ = require("lodash");
 
-const MAX_RESULTS_PER_PAGE = 100;
+const MAX_RESULTS_PER_PAGE = global.flickrResultsPerPage;
 
 let flickrIndex = {
     json: function getJson(req, res) {
-        let env = process.env.NODE_ENV || "development";
+        logger.debug(`flickr index, showing ${MAX_RESULTS_PER_PAGE} results per page`);
         let resultCount = req.query.results || MAX_RESULTS_PER_PAGE;
         let query = {
             method: "flickr.people.getPublicPhotos",
@@ -25,7 +25,7 @@ let flickrIndex = {
         };
 
         co(function* () {
-          // You can also pass options object, see http://github.com/mikeal/request docs
+            // You can also pass options object, see http://github.com/mikeal/request docs
             let url = `https://${global.flickrEndpoint}?${qs.stringify(query)}`;
             // console.log(`flickr: ${url}`);
             let result = yield request(url);

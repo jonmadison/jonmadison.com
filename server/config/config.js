@@ -1,4 +1,5 @@
 "use strict";
+
 let database_url = process.env.DATABASE_URL || 'postgres://localhost:5432/jon';
 
 let config = {
@@ -8,6 +9,7 @@ let config = {
     //get from https://www.flickr.com/services/api/explore/flickr.people.findByUsername
     flickrUserId: process.env.FLICKR_USER_ID,
     flickrEndpoint: "api.flickr.com/services/rest/",
+    flickrResultsPerPage: `${process.env.FLICKR_RESULTS_PER_PAGE || 100}`,
     apiPrefix: "/api",
     databaseUrl: database_url,
     development: {
